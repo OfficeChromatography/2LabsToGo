@@ -192,7 +192,7 @@
 ForceSensor force = ForceSensor();
 
 // Air Sensor
-#define DHTPIN 85
+#define DHTPIN 42
 #define DHTTYPE DHT22 
 DHT dht(DHTPIN, DHTTYPE);
 
