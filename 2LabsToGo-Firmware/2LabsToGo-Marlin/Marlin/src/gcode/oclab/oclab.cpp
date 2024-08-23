@@ -20,7 +20,7 @@
   clock_prescale_set(clock_div_1);
 #endif
 
-#define LED_PIN_PIXEL    74
+#define LED_PIN_PIXEL    54
 #define LED_COUNT 16
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN_PIXEL, NEO_GRBW + NEO_KHZ800);
 extern ForceSensor force ;
