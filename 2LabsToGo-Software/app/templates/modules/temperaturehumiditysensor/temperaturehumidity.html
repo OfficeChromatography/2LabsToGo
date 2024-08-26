@@ -1,0 +1,15 @@
+{% load static %}
+<div class="container">
+    <div class="row pl-3" id="air_sensor_module">
+        <div class="col px-1 align-self-center">T:</div>
+        <div class="col px-1 align-self-center" id="air_temperature">0.00°C</div>
+
+        <div class="col px-1 align-self-center">H:</div>
+        <div class="col px-1 align-self-center" id="air_humidity">0.00%</div>
+
+        <div class="col align-self-center">
+            <button id="air_sensor_sync" class="btn btn-link"><i class="fas fa-sync"></i></button>
+        </div>
+    </div>
+</div>
+<script src="{% static 'modules/temperaturehumiditysensor/temperaturehumiditysensor.js' %}"></script>

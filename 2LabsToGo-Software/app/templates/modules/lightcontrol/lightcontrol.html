@@ -1,0 +1,25 @@
+{% load static %}
+<div class="container">
+  <div class="d-flex justify-content-between py-2">
+    <p class="text-center  m-0">Light Intensity</p>
+    <input class="custom-range mx-2" name="lightrange" value='50' type="range" min="0" max="255" step="1" id='lightrange'/>
+    <input type="number" class='form-control' value="50" id='inttext' min="0" max="255" style="width: 5em"/>
+  </div>
+  <br>
+  <div class="float-right">
+    <button class="btn btn-success btn-icon-split btn-sm" id='lighton'>
+      <span class="icon text-white-50">
+        <i class="fas fa-lightbulb"></i>
+      </span>
+      <span class="text">Turn On Light</span>
+    </button>
+    <button class="btn btn-danger btn-icon-split btn-sm" id='lightoff' disabled>
+      <span class="icon text-white-50">
+        <i class="fas fa-lightbulb"></i>
+      </span>
+      <span class="text">Turn Off Light</span>
+    </button>
+  </div>
+</div>
+<script src="{% static 'modules/lightcontrol/lightcontrol.js' %}"></script>
+

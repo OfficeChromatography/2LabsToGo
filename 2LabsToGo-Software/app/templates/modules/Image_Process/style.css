@@ -1,0 +1,306 @@
+/* CSS styles for RGB Range Sliders */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+       background-color: #f5f5f5; /* Add a light background color */
+}
+
+h1 {
+  margin-bottom: 50px;
+  text-align: center;
+  color: #333; /* Darken the heading color for better contrast */
+}
+
+
+h4 {
+  font-size: 20px; /* Adjust to your desired size */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+#uploaded-image {
+  display: block;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 20px;
+  margin-bottom: 50px;
+}
+    /* Image preview */
+.preview {
+	margin-top: 20px;
+	position: relative;
+	text-align: center;
+}
+
+.preview img {
+  width: 100%; /* Make the image take up 100% of its container's width */
+  height: auto; /* Maintain the aspect ratio of the image */
+  max-width: 100%; /* Ensure the image does not exceed the container's width */
+  max-height: 100%;
+
+  border-radius: 5px; /* Add a slight border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */	
+  margin-top: 20px;		
+
+	    
+}
+
+#InitialRGB {
+	width: 100%;
+	position: absolute; /* Position the label absolutely */
+	bottom: -40px; /* Move the label below the photo */
+	left: 50%; /* Center the label horizontally */
+	transform: translateX(-50%); /* Adjust for horizontal centering */
+	padding: 5px 10px; /* Add padding for better visibility */
+	border-radius: 5px; /* Add rounded corners */
+}
+
+#path {
+	position: absolute; 
+	text-align: center;
+	width: 600px;
+	top: -15px; 
+	left: 50%; 
+	transform: translateX(-50%); /* Adjust for horizontal centering */
+	padding: 5px 10px; /* Add padding for better visibility */
+	border-radius: 5px; /* Add rounded corners */
+}
+
+.controls{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+
+}
+
+.custom-file-upload {
+	display: inline-block;
+	padding: 6px 5px;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #f0f0f0;
+	color: #333;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 50px;
+	width: 180px;		
+}
+
+.slider-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      align-items: center;
+      
+}
+
+.slider-column{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.slider-row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.slider-container2 {
+      align-items: center;
+      
+      /*margin: 0 auto;*/
+ 
+}
+
+
+.slider-label {
+      display: inline-block;
+      margin-bottom: 5px; 
+      color: #666; 
+      width: 100px;
+      margin-right: 10 px;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.slider-container2 input[type="range"] {
+  width: 100%;
+  flex-grow: 1;
+}
+    
+.slider-value {
+     color: #666; 
+     margin-left: 10px;
+     display: inline-block;
+     margin-bottom: 10px;
+
+ }
+	 
+#output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+    margin-bottom: 20px; /* Add space below the output */
+}
+	
+/* Custom file upload button */
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 22;
+    margin-right: 40px;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none;
+}	
+    
+/* CSS for the reset button */
+.buttons{
+      justify-content: center;	
+      display: inline-block;
+      font-weight: bold;
+      margin: 20px 10px; /* Center the button */
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s; /* Add a smooth transition */
+      line-height: 1.5; /* Consistent line height */
+      width: 180px;
+}
+    
+.buttons:hover {
+    background-color: #0056b3;
+}
+	
+	
+.button-container {
+	display: flex; /* Use flexbox for horizontal alignment */
+	justify-content: center; /* Center the buttons horizontally */
+	margin-top: 50px;
+	
+}
+
+.button-container button {
+	margin: 0 10px; /* Add space between the buttons */
+	line-height: 1.5; /* Consistent line height */
+}
+	
+.apply-skip-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    background-color: #007bff; /* Background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px;
+    width: 150px;
+    font-size: 17px;
+}
+
+.apply-skip-button:hover {
+    background-color: #0056b3;
+
+}
+    
+.nav-container {
+
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+}
+
+
+.nav-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(255, 255, 255, 0.5);
+	border: none;
+	color: #333;
+	font-size: 20px;
+	padding: 5px 10px;
+	cursor: pointer;
+	outline: none;
+	z-index: 1;
+	border-radius: 25%;
+	box-shadow: 0 2px 4px rgba(0,0,0, 0.1);
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button:hover {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+#left {
+	left: -10;
+}
+
+#right {
+	right: 0;
+}
+
+.threshold-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.threshold-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  
+}
+
+.threshold-label {
+     margin-top: 10px;
+    color: #666;
+    width: 60px;
+    font-size: 17px;
+}
+
+.threshold-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Syringe Settings</h1>
+<form method="post" id="settings-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Settings</button>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const syringeVolumeField = document.querySelector('input[name="SYRINGE_VOLUME"]');
+  const syringeLengthField = document.querySelector('input[name="SYRINGE_LENGTH"]');
+
+  syringeVolumeField.addEventListener("change", function() {
+    
+    const selectedVolume = parseFloat(this.value);
+    
+    // Map SYRINGE_VOLUME to corresponding SYRINGE_LENGTH values
+    const lengthMappings = {
+      3: 40,
+      6: 50,
+      12: 60,
+    };
+
+    if (lengthMappings[selectedVolume]) {
+      syringeLengthField.value = lengthMappings[selectedVolume];
+    } else {
+      syringeLengthField.value = '';
+    }
+  });
+});
+</script>
+{% endblock %}

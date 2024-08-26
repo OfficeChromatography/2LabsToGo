@@ -1,0 +1,88 @@
+{% load static %}
+<p><b>Development</b><hr></p>
+<!--Volume-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_develop_volume" class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Volume</label>
+        <input type="number" name="volume" value="1000" class="form-control development-flowrate-insidence change-graph-size-parameter" step="0.1" required="" id="id_develop_volume">
+        <div class="input-group-append">
+            <span class="input-group-text">uL</span>
+        </div>
+    </div>
+</div>
+<!--Applications-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_applications" class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Number of passes</label>
+        <input type="number" name="applications" value="10" class="form-control development-flowrate-insidence" step="1" id="id_applications">
+        <div class="input-group-append">
+            <span class="input-group-text">#</span>
+        </div>
+    </div>
+</div>
+<!--Waiting Time-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Waiting Time</label>
+        <div class="d-flex align-items-center">
+            <i id="modalWaitingTimesLauncher" class="fas fa-external-link-alt"></i>
+        </div>
+
+    </div>
+</div>
+
+<!--Fluid-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_fluid" class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Main Solvent</label>
+        <select name="fluid" class="form-control change-graph-size-parameter" maxlength="120" id="id_fluid">
+            <option value="n-Hexane">n-Hexane</option>
+            <option value="Pentane">Pentane</option>
+            <option value="Cyclohexane">Cyclohexane</option>
+            <option value="Carbon Tetrachloride">Carbon tetrachloride</option>
+            <option value="Toluene">Toluene</option>
+            <option value="Chloroform">Chloroform</option>
+            <option value="Dichloromethane">Dichloromethane</option>
+            <option value="Diethyl ether">Diethyl ether</option>
+            <option value="Ethyl acetate">Ethyl acetate</option>
+            <option value="Acetone">Acetone</option>
+            <option value="Ethanol">Ethanol</option>
+            <option value="Methanol" selected="">Methanol</option>
+            <option value="Butanol">2-Butanol</option>
+            <option value="Pyridine">Pyridine</option>
+            <option value="Water">Water</option>
+            <option value="Specific">Specific</option>
+        </select>
+    </div>
+</div>
+<div style="display: none;" id="specificFluidTable"><table class="table table-bordered table-responsive-md table-striped text-center">
+  <tr class="hide"><td class="pt-3-half">density [g/cm³]</td><td class="pt-3-half" id="densityval">
+      <input type="text" name="density" class="form-control" maxlength="120">
+  </td></tr>
+  <tr class="hide"><td class="pt-3-half">viscosity [cSt]</td><td class="pt-3-half" id="viscosityval">
+      <input type="text" name="viscosity" class="form-control" maxlength="120">
+  </td></tr></table></div>
+
+<!--Description-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_description" class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Description</label>
+        <input type="text" name="description" class="form-control" maxlength="120" id="id_description">
+    </div>
+</div>
+
+<!--Print Bothways-->
+<div class="form-group row">
+    <div class="col-xl-6 m-0 p-0">
+        <div class="input-group input-group-sm col p-0">
+            <label for="printBothways_id" class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Print Bothways</label>
+            <input class="btn btn-primary" type="checkbox" name="printBothways" id="printBothways_id" checked>
+        </div>
+    </div>
+    <div class="col-xl-6 px-1 pt-lg-3">
+        <span id="flowrate">Estimated flowrate: 26 ul/s</span>
+    </div>
+</div>
+<script src="{% static 'modules/development/devproperties.js' %}"></script>
+
+

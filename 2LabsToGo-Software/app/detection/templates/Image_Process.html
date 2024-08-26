@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+{% load static %}
+<head>
+  
+<!--{% include 'head.html' %}-->
+<title>Process Image</title>
+<link href="{%static 'modules/Image_Process/style.css'%}" rel="stylesheet">
+</head>
+
+<body id="page-top">
+  
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    
+    <!-- Sidebar -->
+    {% include 'sidebar.html' %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {% include 'topbar.html' %}
+        <!-- End of Topbar -->
+        
+        
+        <!-- Begin Page Content -->
+        <div class="container-fluid">   
+          
+               
+          <!-- Page Heading --> 
+          <h1 class="h3 mb-4 text-gray-800">Image Process</h1>
+          <div class="card-group row">
+              <div class="col-lg-6">
+                  
+                    <div class="container">
+                          <div class="preview">
+                                <p id="path"></p>
+                                
+                                <button id="left" class="nav-button" >&lt;</button>
+                                
+                                <div class="image-container"> 
+                                    <img id="uploaded-image" src="{{imagepath}}" alt="Uploaded Image">
+                                </div>   
+                                
+                                <button id="right" class="nav-button" >&gt;</button>
+                                
+                                <div class="initialRGB">
+                                  <strong id="InitialRGB">Initial RGB( 0 , 0 , 0)</strong>
+                                </div>
+                          </div>
+                      </div>
+                            
+                          <div class="card shadow mb-4 ">
+                            <div class="card-header py-3">
+                              <div class="d-flex flex-row justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Initial Settings</h6>
+                                <button id='minimize-settings' class="btn btn-link" data-toggle="collapse" data-target="#initialsettingcontent" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                              </div>
+                            </div>
+                      
+                        
+                            <div class="card-body show" id='initialsettingcontent'>
+                              
+                                <div class="threshold-container">
+                                  <h4>Skip Pixels (%) </h4>
+                                  
+                                    <div class="threshold-inputs">
+                                
+                                        <label for="threshold-red" class="threshold-label">Top:</label>
+                                        <input type="number" id="top-skip" class="threshold-input" min="0" max="100" step="5" value="0">
+                                        
+                                        <label for="threshold-green" class="threshold-label">Bottom:</label>
+                                        <input type="number" id="bottom-skip" class="threshold-input" min="0" max="100" step="5"  value="0">
+                                      
+                                    </div>
+                                </div>
+                             
+                            
+                                <div class="threshold-container">
+                                    <h4>Threshold</h4>
+                                    
+                                    <div class="threshold-inputs">
+                                      
+                                        <label for="threshold-red" class="threshold-label">Red:</label>
+                                        <input type="number" id="threshold-red" class="threshold-input" min="0" max="100" value="20">
+                                        
+                                        <label for="threshold-green" class="threshold-label">Green:</label>
+                                        <input type="number" id="threshold-green" class="threshold-input" min="0" max="100" value="15">
+                                        
+                                        <label for="threshold-green" class="threshold-label">Blue:</label>
+                                        <input type="number" id="threshold-blue" class="threshold-input" min="0" max="100" value="18">
+                                    
+                                    </div>
+                                    
+                                </div>
+                                <button id="apply-skip-button" class="apply-skip-button">Reset & Apply</button> 
+                            </div>                            
+                
+                </div>
+               </div> 
+                
+                <div class="col-lg-6">
+                  <div class="controls">
+                    <label for="image-upload" class="buttons">Choose File</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                    
+                    <button id="DataBase-button" class="buttons" onclick="DataBase()">Data Base</button>
+                    <button id="save-button" class="buttons" onclick="SaveData()">Save</button>
+                    
+                  </div>
+                
+                  
+                  
+                  <div class="card shadow mb-4 ">
+                    <div class="card-header py-3">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">RGB Settings</h6>
+                        <button id='minimize-settings' class="btn btn-link" data-toggle="collapse" data-target="#RGBsettingscontent" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="card-body show" id='RGBsettingscontent'>
+                        <div class="slider-container">
+                          
+                            <div class="slider-column">
+                              <h4>Background</h4>
+                              <div class="d-flex justify-content-between py-2">
+                                <label for="red-slider-b" class="slider-label">Red:</label>
+                                <input type="number" id="red-value-b" class="slider-input" min="0" max="255" value="0">
+                              </div>
+                              <div class="d-flex justify-content-between py-2">
+                                <input type="range" id="red-slider-b" min="0" max="255" value="0" step="1">
+                              </div>
+                              
+                              <div class="d-flex justify-content-between py-2">
+                                <label for="green-slider-b" class="slider-label">Green:</label>
+                                <input type="number" id="green-value-b" class="slider-input" min="0" max="255" value="0">
+                              </div>
+                              <div class="d-flex justify-content-between py-2">
+                                <input type="range" id="green-slider-b" min="0" max="255" value="0" step="1">
+                              </div>
+                              
+                              <div class="d-flex justify-content-between py-2">
+                                <label for="blue-slider-b" class="slider-label">Blue:</label>
+                                <input type="number" id="blue-value-b" class="slider-input" min="0" max="255" value="0">
+                              </div>
+                              <div class="d-flex justify-content-between py-2">
+                                <input type="range" id="blue-slider-b" min="0" max="255" value="0" step="1">
+                              </div>
+                              
+                              
+                                <div class="slider-row">
+                                    <p id="RGB-b">RGB( 0, 0 , 0 )</p>
+                                </div>
+                            </div>
+                            
+                            <div class="slider-column"> 
+                                 <h4>Foreground</h4> 
+                                 
+                                 <div class="d-flex justify-content-between py-2"> 
+                                  <label for="red-slider-f" class="slider-label">Red:</label>
+                                  <input type="number" id="red-value-f" class="slider-input" min="0" max="255" value="0">
+                                 </div>
+                                 <div class="d-flex justify-content-between py-2">
+                                  <input type="range" id="red-slider-f" min="0" max="255" value="0" step="1">
+                                 </div>
+                                 
+                                 <div class="d-flex justify-content-between py-2"> 
+                                  <label for="green-slider-f" class="slider-label">Green:</label>
+                                  <input type="number" id="green-value-f" class="slider-input" min="0" max="255" value="0">
+                                 </div>
+                                 <div class="d-flex justify-content-between py-2">
+                                  <input type="range" id="green-slider-f" min="0" max="255" value="0" step="1">
+                                 </div>
+                                 
+                                 <div class="d-flex justify-content-between py-2">
+                                  <label for="blue-slider-f" class="slider-label">Blue:</label>
+                                  <input type="number" id="blue-value-f" class="slider-input" min="0" max="255" value="0">
+                                 </div>
+                                 <div class="d-flex justify-content-between py-2">
+                                  <input type="range" id="blue-slider-f" min="0" max="255" value="0" step="1">
+                                 </div>
+                                 
+                                  <div class="slider-row">
+                                      <p id="RGB-f">RGB( 0, 0 , 0 )</p>
+                                  </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                      
+                  <div class="card shadow mb-4 ">
+                    <div class="card-header py-3">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Enhancement Settings</h6>
+                        <button id='minimize-settings' class="btn btn-link" data-toggle="collapse" data-target="#enhancementsettingscontent" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                      </div>
+                    </div> 
+
+                    <div class="card-body show" id='enhancementsettingscontent'>
+                      <div class="slider-container2">
+             
+                              <label for="brightness-slider" class="slider-label">Brightness:</label>
+                              <input type="number" id="brightness-value" class="slider-input" min="0" max="2" value="1" step="0.01">
+                              <input type="range" id="brightness-slider" min="0" max="2" value="1" step="0.01">
+                              
+                              <label for="contrast-slider" class="slider-label">Contrast:</label>
+                              <input type="number" id="contrast-value" class="slider-input" min="0" max="2" value="1" step="0.01">
+                              <input type="range" id="contrast-slider" min="0" max="2" value="1" step="0.01">
+
+                              
+                              <label for="hue-slider" class="slider-label">Hue-rotate:</label>
+                              <input type="number" id="hue-value" class="slider-input" min="0" max="360" value="0">
+                              <input type="range" id="hue-slider" min="0" max="360" value="0" step="1">
+                      </div>
+              
+                    </div>
+                  </div>
+                  
+                  <div class="button-container">
+                        <button id="dark-default-button" class="buttons" onclick="Default('dark')">Dark Background</button>
+                        <button id="reset-button" class="buttons" onclick="Reset()">Reset</button>
+                        <button id="light-default-button" class="buttons" onclick="Default('light')">Light Background</button>
+                  </div>
+                  
+                </div>
+              </div>
+
+
+            </div>
+
+              </div>
+              <!-- End of Main Content -->
+
+              <!-- Footer -->
+              {% include 'footer.html' %}
+              <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+          </div>
+          <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="{% static 'js/sb-admin-2.js' %}"></script>
+  {% include 'modules/detectionhome/detectionhome.html' %}
+  <script src="{% static 'js/oclab/topbar.js' %}"></script>
+  {% include 'modules/csrftoken/csrftoken.html' %}
+  <link rel="stylesheet" href="{% static 'modules/colpick/colpick.css' %}" type="text/css"/>
+  <script src="{% static 'modules/loadlist/loadlist.js' %}"></script>
+  <script src="{% static 'modules/Image_Process/script.js' %}"></script>
+</body>
+</html>

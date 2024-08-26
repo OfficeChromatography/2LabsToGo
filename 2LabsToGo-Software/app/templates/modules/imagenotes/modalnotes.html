@@ -1,0 +1,20 @@
+{% load static %}
+<div class="modal fade" id="notesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Notes</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" id="notestextarea" rows="10"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id='save_note_bttn' class="btn btn-outline-secondary" type="button">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'modules/imagenotes/modalnotes.js' %}"></script>

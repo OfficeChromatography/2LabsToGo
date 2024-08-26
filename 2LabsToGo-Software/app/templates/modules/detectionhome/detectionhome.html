@@ -1,0 +1,21 @@
+{% load static %}
+<div class="modal fade" id="hommingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detection Homming Setup</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% include 'modules/movement/movementcontrol.html' %}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id='getHome' type="button" data-dismiss="modal">Load Home</button>
+                <button class="btn btn-secondary" id='setHome' type="button" data-dismiss="modal">Set Home</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'modules/detectionhome/detectionhome.js' %}"></script>

@@ -1,0 +1,16 @@
+{% load static %}
+<form>
+    <div class="input-group px-2">
+        <div class="input-group-prepend">
+            <button id='export_bttn' class="btn btn-outline-primary" type="button">Export</button>
+            <button id='new_method_bttn' class="btn btn-outline-primary" type="button">New</button>
+        </div>
+            <input id='new_filename' name="filename" type="text" class="form-control" placeholder="Name" aria-label="" value="">
+            <input id="selected-element-id" name="selected-element-id" hidden value="">
+        <div class="input-group-append">
+            <button id='save_bttn' class="btn btn-outline-success" type="button">Save</button>
+        </div>
+    </div>
+</form>
+    <div class="list-group p-3" id="list-load" role="tablist" style="max-height:300px; overflow-y:scroll;"></div>
+<script src="{% static 'modules/loadlist/loadlist.js' %}"></script>

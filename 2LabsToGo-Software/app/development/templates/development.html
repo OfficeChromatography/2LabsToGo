@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+  <!--{% include 'modules/basics/head.html' %}-->
+  <title>Development</title>
+  
+  <!-- Chart.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" charset="utf-8"></script>
+
+  <!--JSXGraph-->
+  <script type="text/javascript" charset="UTF-8"
+  src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraphcore.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraph.css" />
+
+</head>
+
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    {% include 'sidebar.html' %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar -->
+        {% include 'topbar.html' %}
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-4 text-gray-800">Development</h1>
+          </div>
+          <div class="card-group row">
+
+            <div class="col-lg-4 col-xl-6 p-0">
+              <!-- Settings Board -->
+              <div class="card shadow mb-4 ">
+                <div class="card-header py-3">
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Settings</h6>
+                    <button title='Select the Syringe Size' id='syringe-types-settings' class="btn btn-link"  data-toggle="modal" data-target="#syringeSettingsModal"><i class="fas fa-cog"></i></button>
+                    <button title='Insert the Syringe' id='syringe-settings' class="btn btn-link"  data-toggle="modal" data-target="#syringeModal"><i class="fas fa-syringe"></i></i></button>
+                    <button title='Rinsing Process' id='rinse-settings' class="btn btn-link"  data-toggle="modal" data-target="#rinseVolModal"><i class="fas fa-tint"></i></button>
+                    <button title='Minimize the Window' id='minimize-settings' class="btn btn-link" data-toggle="collapse" data-target="#settingscontent" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                  </div>
+                </div>
+                <div class="card-body show" id='settingscontent'>
+                  {% include 'modules/development/settingsform.html' %}
+                </div>
+              </div>
+              <!-- Plate Design Board -->
+              <div class="card shadow mb-4 ">
+                <div class="card-header py-3">
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Parameters</h6>
+                    <!--<button id='hommingbttn' name='start' class="btn btn-link" data-toggle="modal" data-target="#hommingModal"><i class="fas fa-home"></i></button> -->
+                    <button title='Minimize the Window' id='minimize-platepreview' class="btn btn-link" data-toggle="collapse" data-target="#parametersarea" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                  </div>
+                </div>
+                <div class="card-body show" id='parametersarea'>
+                  {% include 'modules/development/platepropertiesform.html' %}
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+            <div class="col-lg-8 col-xl-6">
+              <div class="card shadow mb-4 ">
+                  <div class="card-header">
+                      <div class="d-flex flex-row justify-content-between align-items-center">
+                          <h6 class="m-0 font-weight-bold text-primary">Save and Load</h6>
+                          <button title='Minimize the Window' id='minimize-settings' class="btn btn-link invisible" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                      </div>
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                      {% include 'modules/loadlist/loadlist.html' %}
+                      <br>
+                      <form id="importCsvForm" action="{% url 'import_development_csv' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="csv_file" id="import_csv_file" class="form-control">
+                        <button type="submit" id="import_csv_button" class="btn btn-primary mt-2">Import CSV</button>
+                      </form>
+                      <br>
+                      <div class="container-fluid">
+                          <div class="row">
+                              
+                              <div class="col">
+                                  {% include 'modules/applicationcontrol/applicationcontrol.html' %}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Plate Preview -->
+              <div class="card shadow mb-4 ">
+                <div class="card-header py-3">
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Plate Preview</h6>
+                    <button title='Minimize the Window' id='minimize-platepreview' class="btn btn-link" data-toggle="collapse" data-target="#platepreviewarea" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                  </div>
+                </div>
+                <div class="card-body show" id='platepreviewarea'>
+                  {% include 'modules/bandschart/bandschart.html' %}
+                </div>
+              </div>
+
+              <!-- Flowrate Settings Board -->
+              <div class="card shadow mb-4 ">
+                <div class="card-header py-3">
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Flowrate Settings</h6>
+                    <button title='Minimize the Window' id='minimize-platepreview' class="btn btn-link" data-toggle="collapse" data-target="#flowratearea" aria-expanded="true" aria-controls="collapseOne"><i class="far fa-window-minimize"></i></button>
+                  </div>
+                </div>
+                <div class="card-body show" id='flowratearea'>
+                  <div class="d-flex justify-content-center">
+                    {% include 'modules/flowrategraph/flowrategraph.html' %}
+                  </div>
+
+                </div>
+              </div>
+
+
+              </div>
+              
+
+          </div>
+        </div>
+        
+        
+
+        <!-- /.container-fluid -->
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      {% include 'footer.html' %}
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+  <!-- Logout Modal-->
+  {% include 'modules/logout/logoutmodal.html' %}
+  {% include 'modules/homming/homming.html' %}
+  {% include 'modules/syringeload/syringeload.html' %}
+  {% include 'modules/syringetype/syringetype.html' %}
+  {% include 'modules/rinseVol/rinseVol.html' %}
+  {% include 'modules/development/waitingtime/modal.html' %}
+  <script src="{% static 'js/sb-admin-2.js' %}"></script>
+  <script src="{% static 'js/oclab/topbar.js' %}"></script>
+  <script src="{% static 'js/oclab/development.js' %}"></script>
+  {% include 'modules/csrftoken/csrftoken.html' %}
+
+<!---Modal to pop up on entering development-->
+<div class="modal fade" id="devModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tip</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Place the development chamber on top of the plate and select the bottom offset accordingly.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>

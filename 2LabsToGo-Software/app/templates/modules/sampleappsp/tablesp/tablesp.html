@@ -1,0 +1,88 @@
+{% load static %}
+<table class="table table-bordered table-responsive-md table-striped text-center">
+       
+    <thead>
+        <tr>
+            <th class="text-center">Band</th>
+            <th class="text-center">Sample</th>
+            <th class="text-center">Volume (uL)</th>
+            <th class="text-center">Calculations</th>
+        </tr>
+    </thead>
+    <tbody id='tbody-band'>
+        <tr class="band-row" style="display: none">
+            <td class="pt-3-half band-number"></td>
+            <td class="pt-3-half description-column">
+                <form class="m-0 description">
+                    <div class="col">
+                        <input name="product_name" type="text" class="form-control form-control-sm product"
+                            placeholder="Name">
+                    </div>
+                </form>
+                </br>
+                <div class="btn btn-primary btn-icon-split copybttn">
+                    <span class="icon">
+                        <i class="fas fa-copy"></i>
+                    </span>
+                </div>
+                <div class="btn btn-primary btn-icon-split pastebttn">
+                    <span class="icon">
+                        <i class="fas fa-paste"></i>
+                    </span>
+                </div>
+            </td>
+            <td class="pt-3-half volume-cell">
+                <form class="m-0 band-component">
+                    <div class="form-group row">
+                        <div class="col">
+                            <input name="volume" type="number" class="form-control form-control-sm volume"
+                                placeholder="Volume [uL]" step="0.01">
+                        </div>
+                        <div class="col specific-options" style="display:none;">
+                            <input name="density" type="number" class="form-control form-control-sm density"
+                                placeholder="density [g/cm³]" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col ">
+
+                            <select name="solvent" class="form-control form-control-sm solvent_select">
+                                <option style="display: none" value=""></option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col specific-options" style="display:none;">
+                        <input name="viscosity" type="number" class="form-control form-control-sm viscosity"
+                            placeholder="viscosity [cSt]">
+                    </div>
+
+                    </div>
+                </form>
+            </td>
+            <td class="m-1 calculation-cell">
+                <table style="width:100%">
+                    <tr>
+                        <td><small>Volume: </small></td>
+                        <td><small class="estimated-volume"></small></td>
+                    </tr>
+                    <tr>
+                        <td><small>DropVol: </small></td>
+                        <td><small class="estimated-drop"></small></td>
+                    </tr>
+                    <tr>
+                        <td><small>MinVol: </small></td>
+                        <td><small class="minimum-volume"></small></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+    <p><b id="total-time"></b></p>
+</table>
+<script src="{% static 'modules/sampleappsp/tablesp/tablesp.js' %}"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+<!--{% include 'head.html' %}-->
+<title>Connection</title>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    {% include 'sidebar.html' %}
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {% include 'topbar.html' %}
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid" style="height:80%">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Connection</h1>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row ">
+
+            <!-- Serial Port -->
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-5 mb-4">
+              <div class="card border-left-success shadow mh-25">
+                <div class="card-header">
+                  <div class="container row">
+                    <div class="col align-self-center">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase">Serial Port</div>
+                    </div>
+                    <!-- USB icon -->
+                    <div class="col-auto align-self-center">
+                      {% if object %}
+                        <i class="fab fa-usb fa-2x text-green-500"></i>
+                      {% else %}
+                        <i class="fab fa-usb fa-2x text-gray-300"></i>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                      <!-- Input Group -->
+                  <form class="connection-form" method="post" id="serialport"> {% csrf_token %}
+                    <!--OC-LAB  -->
+                    {{ connectionset.oc_lab.errors }}
+                    {{ connectionset.oc_lab.label_tag }}
+                    {{ connectionset.oc_lab }}
+                    <!--BAUDRATE  -->
+                    {{ connectionset.baudrate.errors }}
+                    {{ connectionset.baudrate.label_tag }}
+                    {{ connectionset.baudrate }}
+                    <!--TIMEOUT  -->
+                    {{ connectionset.timeout.errors }}
+                    {{ connectionset.timeout.label_tag }}
+                    {{ connectionset.timeout }}
+
+                    <div class="d-flex">
+                      <button class="btn btn-outline-secondary" type="submit" id="connButton">Connect</button>
+                      <button class="btn btn-outline-secondary" id="disconnectBttn">Disconnect</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Monitor Card -->
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-7 mb-4">
+              {% include 'modules/monitor/monitor.html' %}
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      {% include 'footer.html' %}
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  {% include 'modules/logout/logoutmodal.html' %}
+
+  {% include 'modules/csrftoken/csrftoken.html' %}
+
+  <script src="{% static 'js/sb-admin-2.js' %}"></script>
+  <script src="{% static 'js/oclab/connection.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/oclab/topbar.js' %}"></script>
+</body>
+</html>

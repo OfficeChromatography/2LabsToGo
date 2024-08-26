@@ -1,0 +1,43 @@
+div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;
+    display: inline-flex;
+}
+div.show-image:hover img{
+    opacity:1;
+}
+div.show-image:hover button {
+    display: block;
+}
+div.show-image button {
+    position:absolute;
+    display:none;
+}
+div.show-image button.image-note {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+div.show-image button.image-open {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+div.show-image button.image-config-load {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+div.show-image button.image-right {
+    position: absolute;
+    bottom: 42%;
+    right: 20px;
+}
+
+div.show-image button.image-left {
+    position: absolute;
+    bottom: 42%;
+    left: 16px;
+}

@@ -1,0 +1,12 @@
+{% load static %}
+<div class="alert alert-info alert-dismissible collapse" id='id_parameter_error' role="alert">
+    Please fill in all Parameters!
+</div>
+<!-- Parameters Body -->
+<form id="plateform">
+    {% include 'modules/sampleapp/platesizes.html' %}
+    {% include 'modules/sampleapp/offsets.html' %}
+    {% include 'modules/development/devproperties.html' %}
+</form>
+
+

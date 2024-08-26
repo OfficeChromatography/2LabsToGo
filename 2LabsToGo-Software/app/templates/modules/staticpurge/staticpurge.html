@@ -1,0 +1,57 @@
+{% load static %}
+<div class="card shadow mb-4" id='staticpurgecard'>
+  <div class="card-header py-3">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Static Purge</h6>
+      <button id='syringe-settings'class="btn btn-link"  data-toggle="modal" data-target="#syringeModal"><i class="fas fa-syringe"></i></button>
+    </div>
+  </div>
+  <div class="card-body">
+    <form id='static-form' method="post"> {% csrf_token %}
+      <div class="input-group">
+        <label for="colFormLabelSm" class="col-xl-2 col-form-label col-form-label-sm text-truncate">Volume</label>
+        <input type="number" name="volume" class='form-control px-1' value="500" id='id_volume'/>
+        <div class="input-group-append">
+            <span class="input-group-text">uL</span>
+        </div>
+      </div>
+      </br>
+      <div class="input-group">
+        <label for="colFormLabelSm" class="col-xl-2 col-form-label col-form-label-sm text-truncate">Speed</label>
+        <input type="number" name="speed" value="1" class="form-control" step="0.1" required="" id="id_speed">
+        <div class="input-group-append">
+            <span class="input-group-text">mm/s</span>
+        </div>
+      </div>
+      </br>
+      <div class="float-right">
+        <button class="btn btn-secondary btn-icon-split btn-sm" id='pump_manual' type="submit">
+          <span class="icon text-white-50">
+            <i class="fas fa-gas-pump"></i>
+          </span>
+          <span class="text">Start!</span>
+        </button>
+      </div>
+      <br>
+    </form>
+  </div>
+  <div class="card-footer text-muted">
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-secondary btn-icon-split btn-sm" id='next_bttn_stat'>
+        <span class="icon text-white-50">
+          <i class="fas fa-forward"></i>
+        </span>
+        <span class="text">Next Step!</span>
+      </button>
+      <button class="btn btn-secondary btn-icon-split btn-sm" id='restart_bttn_dina'  style="display: none">
+        <span class="icon text-white-50">
+          <i class="fas fa-forward"></i>
+        </span>
+        <span class="text">Restart</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'modules/staticpurge/staticpurge.js' %}"></script>
+{% include 'modules/syringeload/syringeload.html' %}

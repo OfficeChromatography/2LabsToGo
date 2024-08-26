@@ -1,0 +1,155 @@
+{% load static %}
+
+<div class="card" id="evaluationcard">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs" id="analysistab-list" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" href="#chromatogram" role="tab" aria-controls="chromatogram" aria-selected="true">Chromatogram</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#trackinspect" role="tab" aria-controls="trackinspect" aria-selected="true">Trackinspect</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#tracksort" role="tab" aria-controls="tracksort" aria-selected="true">Tracksort</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pca" role="tab" aria-controls="pca" aria-selected="false">PCA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="#hca" role="tab" aria-controls="hca" aria-selected="false">HCA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#heatmap" role="tab" aria-controls="heatmap" aria-selected="false">Heatmap</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <div class="tab-content mt-4">
+
+        <div class="tab-pane active" id="chromatogram" role="tabpanel" aria-labelledby="chromatogram-tab">
+          <div id="chromatogramimage">
+
+          </div>
+        </br>
+          <p class="card-text">
+
+            <div class="form-group row">
+              <div class= "col">
+
+                <div class="form-check">
+                  <input class="form-check-input chromoption" type="checkbox" id="id_showtracks">
+                  <label class="form-check-label" for="id_showtracks">
+                    Show Tracks
+                  </label>
+                </div>
+              </div>
+              <div class= "col">
+
+                <div class="form-check">
+                  <input class="form-check-input chromoption" type="checkbox" id="id_showsignal">
+                  <label class="form-check-label" for="id_showsignal">
+                    Show Signal
+                  </label>
+                </div>
+              </div>
+              <div class= "col">
+
+                <div class="form-check">
+                  <input class="form-check-input chromoption" type="checkbox" id="id_showcrop">
+                  <label class="form-check-label" for="id_showcrop">
+                    Show Crop
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class= "col">
+
+                <div class="form-check">
+                  <input class="form-check-input chromoption" type="checkbox" id="id_showtracknumber">
+                  <label class="form-check-label" for="id_showtracknumber">
+                    Show Track Number
+                  </label>
+                </div>
+              </div>
+              <div class= "col">
+                Track Color
+                <select name="trackcolor" class="form-control chromoption" id="id_trackcolor">
+                  <option selected value="red">red</option>
+                  <option value="blue">blue</option>
+                  <option value="white">white</option>
+                  <option value="black">black</option>
+                </select>
+              </div>
+              <div class= "col">
+                Signal Color
+                <select name="signalcolor" class="form-control chromoption" id="id_signalcolor">
+                  <option value="red">red</option>
+                  <option selected value="blue">blue</option>
+                  <option value="white">white</option>
+                  <option value="black">black</option>
+                </select>
+              </div>
+            </div>
+          </p>
+        </div>
+
+
+        <div class="tab-pane" id="trackinspect"role="tabpanel" aria-labelledby="trackinspect-tab">
+          <p class="card-text">
+            <div class="form-group row">
+
+                Track Number
+                <select name="tracknumber" class="form-control" id="id_tracknumber">
+                  <option value="1">1</option>
+                </select>
+            </div>
+
+          </p>
+          <div id="trackinspectimage">
+
+          </div>
+        </div>
+
+        <div class="tab-pane" id="tracksort"role="tabpanel" aria-labelledby="tracksort-tab">
+          <p class="card-text">
+            <div class="form-group row">
+                Rf
+                <input type="number" name="rf" value="0.5" size="9" placeholder="1000" class="form-control" min="0" id="id_rf">
+            </div>
+          </p>
+          <div id="tracksortimage">
+
+          </div>
+        </div>
+
+        <div class="tab-pane" id="pca" role="tabpanel" aria-labelledby="pca-tab">
+          <p class="card-text">
+
+          </p>
+          <div id="pcaimage">
+
+          </div>
+        </div>
+         
+        <div class="tab-pane" id="hca" role="tabpanel" aria-labelledby="hca-tab">  
+          <p class="card-text">
+
+          </p>
+          <div id="hcaimage">
+
+          </div>
+        </div>
+         
+        <div class="tab-pane" id="heatmap" role="tabpanel" aria-labelledby="heatmap-tab">
+          <p class="card-text">
+
+          </p>
+          <div id="heatmapimage">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'modules/analysistab/analysistab.js' %}"></script>

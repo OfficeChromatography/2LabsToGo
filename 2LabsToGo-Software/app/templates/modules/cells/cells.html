@@ -1,0 +1,30 @@
+{% load static %}
+<div class="container">
+  <div class="d-flex justify-content-between py-2">
+    <p class="text-center  m-0">Intensity</p>
+    <input class="custom-range mx-2" name="intensityrange" value='50' type="range" min="0" max="255" step="1" id='intensityrange'/>
+    <input type="number" class='form-control' value="50" id='intensitytext' min="0" max="255" style="width: 5em"/>
+  </div>
+  <br>
+ 
+  <div class="row">
+    <div class="col text-right">
+      <p class="mb-1">Default intensity:</p>
+    </div>
+  </div>
+
+  <!-- Buttons in einer einzigen Zeile -->
+  <div class="row">
+    <div class="col text-left">
+      <button class="btn btn-primary" id='turnoff'>OFF</button>
+      <button class="btn btn-primary" id='manualcontrol'>ON</button>
+    </div>
+    <div class="col text-right">
+      <button class="btn btn-primary" id="s50">50</button>
+      <button class="btn btn-primary" id="s200">200</button>
+    </div>
+  </div>
+
+
+</div>
+<script src="{% static 'modules/cells/cells.js' %}"></script>

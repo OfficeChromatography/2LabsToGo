@@ -1,0 +1,53 @@
+<!-- Editable table -->
+<form id='pressureform'>
+<!--MotorSpeed-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_motor_speed" class="col-xl-3 col-lg-3 col-form-label col-form-label-sm text-truncate px-0 mx-1">X Motor Speed</label>
+        <input type="number" name="motor_speed" value="25" class="form-control change-graph-size-parameter development-flowrate-insidence" step="1" required="" id="id_motor_speed">
+        <div class="input-group-append">
+            <span class="input-group-text">mm/s</span>
+        </div>
+    </div>
+</div>
+<!--Pressure-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_pressure" class="col-xl-3 col-lg-3 col-form-label col-form-label-sm text-truncate px-0 mx-1">Initial Pressure</label>
+        <input type="number" name="pressure" value="30" class="form-control change-graph-size-parameter" step="1" required="" id="id_pressure">
+        <div class="input-group-append">
+            <span class="input-group-text">psi</span>
+        </div>
+    </div>
+</div>
+<!--Temperature-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_temperature" class="col-xl-3 col-lg-3 col-form-label col-form-label-sm text-truncate px-0 mx-1">Temperature</label>
+        <input type="number" name="temperature" value="0" class="form-control change-graph-size-parameter" step="1" required="" id="id_temperature">
+        <div class="input-group-append">
+            <span class="input-group-text">°C</span>
+        </div>
+    </div>
+</div>
+<!--Nozzlediameter-->
+<div class="form-group row">
+    <div class="input-group input-group-sm col p-0">
+        <label for="id_nozzlediameter" class="col-xl-3 col-lg-5 col-form-label col-form-label-sm text-truncate px-0 mx-1">Nozzle</label>
+        <select name="nozzlediameter" class="form-control" maxlength="120" id="id_nozzlediameter">
+            <option value="0.25">0.25</option>
+            <option value="0.19">0.19</option>
+            <option value="0.13">0.13</option>
+            <option value="0.10">0.10</option>
+            <option value="0.08">0.08</option>
+            <option value="0.05">0.05</option>
+            <option value="atomizer 22k">atomizer 22k</option>
+            <option value="atomizer 67k" selected="">atomizer 67k</option>
+        </select>
+        <div class="input-group-append">
+            <span class="input-group-text">mm</span>
+        </div>
+    </div>
+</div>
+</form>
+

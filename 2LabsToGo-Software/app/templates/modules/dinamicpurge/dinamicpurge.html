@@ -1,0 +1,63 @@
+{% load static %}
+<div class="card shadow mb-4 " id='dinamicpurgecard' style="display: none;">
+  <div class="card-header py-3">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      <h6 class="m-0 font-weight-bold text-primary w-100 align-self-center">Dynamic Purge</h6>
+    </div>
+  </div>
+  <div class="card-body">
+   
+    <form id='cleaningprocessform'>
+      <div class="row">
+        <div class="col">
+          {{ CleaningProcessForm.start_frequency.label }}
+          {{ CleaningProcessForm.start_frequency }}
+        </div>
+        <div class="col">
+          {{ CleaningProcessForm.stop_frequency.label }}
+          {{ CleaningProcessForm.stop_frequency }}
+        </div>
+        <div class="col">
+          {{ CleaningProcessForm.steps.label }}
+          {{ CleaningProcessForm.steps }}
+        </div>
+        <div class="col">
+          {{ CleaningProcessForm.pressure.label }}
+          {{ CleaningProcessForm.pressure }}
+        </div>
+      </div>
+    </form>
+    <form  class="move-form" id='ajax-form' method="post"> {% csrf_token %}
+      <div class="flex-row-reverse align-items-center">
+        <div class="progress mt-3">
+          <div id='id_clean_progress_bar'class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+        <div class="form-group col px-0 pt-4">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button id='cleanbttn' name='start' class="btn btn-primary control-bttn">Start</button>
+            </div>
+            <div class="input-group-append">
+              <button id='stopbttn' class="btn btn-primary control-bttn">Stop</button>
+            </div>
+            <div class="input-group-append">
+              <button id='pausebttn' class="btn btn-primary control-bttn">Pause</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <div class="alert alert-dismissible collapse" id='id_cleaning_status' role="alert"></div>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-secondary btn-icon-split btn-sm" id='next_bttn_dina'>
+        <span class="icon text-white-50">
+          <i class="fas fa-forward"></i>
+        </span>
+        <span class="text">Next Step!</span>
+      </button>
+    </div>
+  </div>
+</div>
+<script src="{% static 'modules/dinamicpurge/dinamicpurge.js' %}"></script>
