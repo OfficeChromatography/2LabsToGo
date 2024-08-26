@@ -1,4 +1,4 @@
-# OC-Manager 4.0
+# 2LabsToGo-Software
 ## Install
 The installation process is really simple. 
 
@@ -15,7 +15,7 @@ sudo apt-get install git
 ```
 
 ### 1. Clone the git repository
-The simplest way to clone a git repository is opening a Terminal (`Ctrl+t`), then go to the directory where you would like to have the folder that contains all the configuration files of your OC-LAB **(and between those, it is included the OC-Manager files too)**  
+The simplest way to clone a git repository is opening a Terminal (`Ctrl+t`), then go to the directory where you would like to have the folder that contains all the configuration files of your 2LabsToGo.  
 
 E.g.
 ```bash
@@ -24,7 +24,7 @@ cd ~/Desktop
 Finally, copy and paste the next command and press enter.
 
 ```bash
-git clone https://github.com/OfficeChromatography/OC-Manager4.git
+git clone https://github.com/OfficeChromatography/2LabsToGo.git
 ```
 
 ### 2. Execute 'install.py'
@@ -33,7 +33,7 @@ The next step is to execute a bash script which contains, the necessary software
 *cd* follow by the path to the folder.
 
 ```bash
-cd /path/to/your/OC-files
+cd /path/to/your/2LabsToGo-Software
 ```
 Then execute,
 ```bash
@@ -45,28 +45,12 @@ this will install:
 docker
 docker-compose
 ```
-Now OC-Manager it's installed in your device.
+After some minutes, 2LabsToGo-Software is installed in your device.
 
 ### 3.Before the first execution 
 
-#### With Raspberry Pi
-Depending on the OS change on the docker_compose.yml file. To know the kind of architecture, open a terminal and write:
 
-```
-uname -a 
-```
-
-According to your architecture, change the dockerfile:
-
-```dockerfile
-    image: ocmanager/ocmanager:arm64
-```
-
-```dockerfile
-    image: ocmanager/ocmanager:amd64
-``` 
-
-### 4.OC Manager execution 
+### 4.2LabsToGo-Software execution 
 
 Navigate to the path where OC-Manager was installed and execute ./run.py file.
 ```
