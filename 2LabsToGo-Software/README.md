@@ -2,72 +2,42 @@
 ## Install
 The installation process is really simple. 
 
-OC-Manager 4.0 works fine on a 'Raspberry Pi 4' with 4Gb RAM memory and [Raspberry Pi OS](https://www.raspberrypi.com/software/) installed on it through Raspberry Pi Imager, which was installed by:
-```
-sudo apt install rpi-imager
-```  
+2LabsToGo-Software works fine on a 'Raspberry Pi 4' with 4Gb RAM memory and installed on it through [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 
-### 0. Install git
-Before we begin with the installation, we need to install git.
-```bash
-sudo apt-get update && sudo apt-get -y upgrade
-sudo apt-get install git
-```
+As operation system, Raspberry Pi OS (Legacy, 64-bit, Debial Bullseye) is recommended. 
 
-### 1. Clone the git repository
-The simplest way to clone a git repository is opening a Terminal (`Ctrl+t`), then go to the directory where you would like to have the folder that contains all the configuration files of your 2LabsToGo.  
+To clone the 2LabsToGo repository, consult this [README](https://github.com/OfficeChromatography/2LabsToGo/blob/main/README.md).
 
-E.g.
-```bash
-cd ~/Desktop
-```
-Finally, copy and paste the next command and press enter.
-
-```bash
-git clone https://github.com/OfficeChromatography/2LabsToGo.git
-```
-
-### 2. Execute 'install.py'
-The next step is to execute a bash script which contains, the necessary softwares to run the OC-Manager. If you close the Terminal open it again (remember, `Ctrl+t`). Now go to the folder that contains the OC-Lab files, it is
-
-*cd* follow by the path to the folder.
+### Execute 'install.py'
+To install 2LabsToGo-Software, go to the folder that contains the 2LabsToGo-Software with
 
 ```bash
 cd /path/to/your/2LabsToGo-Software
 ```
-Then execute,
+Then execute
 ```bash
 python3 install.py
 ```
 
-this will install:
+This will install:
 ```
 docker
 docker-compose
 ```
 After some minutes, 2LabsToGo-Software is installed in your device.
 
-### 3.Before the first execution 
-
-
-### 4.2LabsToGo-Software execution 
-
-Navigate to the path where OC-Manager was installed and execute ./run.py file.
+Then and execute the run.py file with
 ```
 python3 run.py 
 ```
-
-OC-Manager supports at the moment only amd64, arm/v7 and arm64 architectures.
-
-OC-Manager3 was intensively tested with Firefox as browser. Therefore, it is recommended to install this browser:
-
+To quit the Django server press
 ```
-sudo apt install firefox-esr
+ctrl+c 
 ```
 
-# FIRMWARE
-Firmware installation 
-[OcLab3Firmware](https://github.com/OfficeChromatography/OCLab3-Hardware)
+2LabsToGo-Software was intensively tested with both Chromium and Firefox as browser.
+
+To use the software consult the [2LabsToGo-Software Manual](https://github.com/OfficeChromatography/2LabsToGo/blob/main/2LabsToGo-Instructions/2LabsToGo-Software%20Manual.pdf).
 
 # Useful guides
 
