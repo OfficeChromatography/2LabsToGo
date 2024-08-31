@@ -38,7 +38,7 @@ echo "The syringe pump starts to move."
 aplay --quiet BusinessEcho.wav
 echo ""
 python3 syringe-pump.py
-sleep 5
+sleep 15
 
 echo "The autosampler moves to vial 1 and the needle down to simulate a rinsing process and sample application."
 aplay --quiet BusinessEcho.wav
@@ -77,7 +77,7 @@ python3 uv365_on.py
 libcamera-still -t 5000 -o uv365.jpg
 python3 uv365_off.py
 
-python3 distort-fisheye.py --file-format jpg --source-folder /home/oc/2LabsToGo-Software/Operational_qualification --output-folder /home/oc/2LabsToGo-Software/Operational_qualification/corrected
+python3 distort-fisheye.py --file-format jpg --source-folder ~/2LabsToGo/2LabsToGo-Software-Software/Operational_qualification --output-folder ~/2LabsToGo/2LabsToGo-Software/Operational_qualification/corrected
 
 python3 y-home.py
 

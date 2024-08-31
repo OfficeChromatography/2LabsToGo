@@ -12,7 +12,7 @@ def command(ser, command):
   time.sleep(1)
 
 ser = serial.Serial('/dev/ttyAMA1', 115200)
-time.sleep(5)
+time.sleep(1)
 
 #Marlin settings for autosampler
 command(ser, "M92Z400\r\n")   #Set Axis Steps-per-unit
@@ -21,7 +21,7 @@ command(ser, "M42P36S0\r\n")  #Switch 3way-valve
 command(ser, "M42P49S0\r\n")  #Switch Z-motor and Z-endstop
 command(ser, "G28Z\r\n")      #Homing Z
 command(ser, "G28X\r\n")      #Homing X
-command(ser, "G0X0F1000\r\n")      #x-cart to funnel
+command(ser, "G0X1F3000\r\n")      #x-cart to 1eft
 command(ser, "G0Z145\r\n")    #Rinsing vial
 
 print("First the system will be rinsed, followed by a pressure test.")
@@ -37,18 +37,20 @@ print("Now the needle is moving into the rinsing vial, and the micropump system 
 print("")
 command(ser, "G0E44\r\n")  #Needle moves down! 44 okay!!
 command(ser, "M400\r\n")   #Wait for needle!
-command(ser, command(ser, "G41\r\n")  #open dispensing valve
+command(ser, "G41\r\n")  #open dispensing valve
 
 try:
-    for x in range(9):      #rinse system, 10 x pump = 500 µL
+    for x in range(14):      #rinse system, 15 x pump = 500 µL
         command(ser, "M42P40S255\r\n")  #activate pump
+        time.sleep(0.1)
         command(ser, "M42P40S0\r\n")  #deactivate pump
         time.sleep(0.5)
 except KeyboardInterrupt:  #Ctrl+c
     os.system("aplay --quiet BusinessEcho.wav")
     print("Program terminated manually!")
     command(ser, "G0E0\r\n")  #Needle moves up!
-    command(ser, "M400\r\n")  #Wait for neddle.
+    command(ser, "M400\r\n")  #Wait for neddle
+    command(ser, "G28Z\r\n")  #Homing vial rack
     raise SystemExit 
 
 os.system("aplay --quiet BusinessEcho.wav")
@@ -57,8 +59,9 @@ print("")
 command(ser, "G40\r\n")  #Close dispensing valve
 
 try:
-    for x in range(2):      #build-up pressure, 3 x pump
+    for x in range(3):      #build-up pressure, 4 x pump
         command(ser, "M42P40S255\r\n")
+        time.sleep(0.1)
         command(ser, "M42P40S0\r\n")
         time.sleep(0.5)
 except KeyboardInterrupt:  #Ctrl+c

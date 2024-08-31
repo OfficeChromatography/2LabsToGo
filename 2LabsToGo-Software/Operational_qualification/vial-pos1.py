@@ -21,7 +21,7 @@ command(ser, "M400\r\n")
 
 command(ser, "G28Z\r\n")      #homing z1
 command(ser, "G28X\r\n")      #Homing X
-command(ser, "G0X2F4000\r\n")      #x-cart to funnel
+command(ser, "G0X1F4000\r\n")      #x-cart to funnel
 command(ser, "M400\r\n")
 
 command(ser, "G0Z144F2000\r\n") 

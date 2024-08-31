@@ -23,19 +23,19 @@ command(ser, "G0X1F1000\r\n")      #x-cart to funnel
 
 #print("Insert the vial rack with parcel tape.")
 print("")
-os.system("--quiet BusinessEcho.wav")
+os.system("aplay --quiet BusinessEcho.wav")
 print("First the vial rack will move to the rinsing vial.")
 print("")
-os.system("--quiet BusinessEcho.wav")
+os.system("aplay --quiet BusinessEcho.wav")
 print("In case of problems, terminate the program immediately with Ctrl+c!")
 print("")
-os.system("--quiet BusinessEcho.wav")
+os.system("aplay --quiet BusinessEcho.wav")
 input("Start the vial position test? (ENTER)")
 
 try:
     command(ser, "G0Z145\r\n")
     command(ser, "M400\r\n")
-    os.system("--quiet BusinessEcho.wav")
+    os.system("aplay --quiet BusinessEcho.wav")
     input("Is the needle guide nearly in the center of the rinsing vial cutout? (ENTER)")
     command(ser, "G0E20\r\n")
     command(ser, "G0E0\r\n")
@@ -65,7 +65,7 @@ try:
     command(ser, "G28X\r\n")      #homing x
     
 except KeyboardInterrupt:  #Ctrl+c
-    os.system("--quiet BusinessEcho.wav")
+    os.system("aplay --quiet BusinessEcho.wav")
     print("Program terminated manually!")
     command(ser, "G0E0\r\n")      #Needle moves up!
     command(ser, "M400\r\n")      #Wait for neddle.
@@ -73,6 +73,6 @@ except KeyboardInterrupt:  #Ctrl+c
     raise SystemExit 
 
 print("Take out the vial rack and check the needle punctures.")
-os.system("--quiet BusinessEcho.wav")
+os.system("aplay --quiet BusinessEcho.wav")
 time.sleep(1)
 ser.close()
