@@ -25,9 +25,9 @@ command(ser, "G28X\r\n")       #Homing X
 command(ser, "G0X1F3000\r\n")  #x-axis to waste bottle
 
 os.system("aplay --quiet BusinessEcho.wav")
-print("Fill a 2-mL syringe with 2 mL ethanol, connect the Luer-lock adapter to the tip, and insert it into the syringe pump.")
+print("Fill a 5-mL syringe with 2 mL ethanol, connect the Luer-lock adapter to the tip, and insert it into the syringe pump.")
 print("")
-command(ser, "G0Z274.67F200\r\n") #Move to position for 5-mL syringe to 2 mL
+command(ser, "G0Z284.42F60\r\n") #Move to position for 5-mL syringe to 2 mL
 
 print("Connect the PTFE tube to the Luer-lock adapter and tighten it with the Lee torque wrench (min. torque).")
 print("")
@@ -46,7 +46,8 @@ print("")
 
 try:
     command(ser, "G41\r\n") #open dispensing valve
-    command(ser, "G0Z281.34F200\r\n") #Move to position to rinse 500 µL (+4.10 mm)
+    command(ser, "G0Z288.52F60\r\n") #Move to position to rinse 500 µL (+4.10 mm)
+    command(ser, "M400\r\n")  #Wait to move
     command(ser, "G40\r\n") #close dispensing valve
     os.system("aplay --quiet BusinessEcho.wav")
     print("Now the dispensing valve was closed, and the syringe pump will build-up a pressure of 5 psi.")
@@ -59,7 +60,7 @@ try:
     print("The pressure will be increased to 10 psi. Also check the 3-way valve!")
     print("")
     command(ser, "G97P10\r\n") #10 psi
-    command(ser, "GM400\r\n")  #Wait for pressure
+    command(ser, "M400\r\n")  #Wait for pressure
     command(ser, "G95P\r\n")  #Report pressure.
     time.sleep(1)
     
@@ -67,7 +68,7 @@ try:
     #print("The pressure will be increased to 15 psi.")
     print("")
     command(ser, "G97P15\r\n") #15 psi
-    command(ser, "GM400\r\n")  #Wait for pressure
+    command(ser, "M400\r\n")  #Wait for pressure
     command(ser, "G95P\r\n")  #Report pressure
     time.sleep(1)
     
@@ -75,7 +76,7 @@ try:
     print("Now the pressure will be increased to 20 psi.")
     print("")
     command(ser, "G97P20\r\n") #20 psi
-    command(ser, "GM400\r\n")  #Wait for pressure
+    command(ser, "M400\r\n")  #Wait for pressure
     command(ser, "G95P\r\n")  #Report pressure
     time.sleep(1)
     os.system("aplay --quiet BusinessEcho.wav")

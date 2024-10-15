@@ -42,19 +42,19 @@ try:
     command(ser, "M400\r\n")
     
     print("Now the positions of vial 1 to 3 are tested.")
-    command(ser, "G0Z169.5\r\n")
+    command(ser, "G0Z170.5\r\n")
     command(ser, "M400\r\n")
     command(ser, "G0E20\r\n")
     command(ser, "G0E0\r\n")
     command(ser, "M400\r\n")
     
-    command(ser, "G0Z183.5\r\n")
+    command(ser, "G0Z184.5\r\n")
     command(ser, "M400\r\n")
     command(ser, "G0E20\r\n")
     command(ser, "G0E0\r\n")
     command(ser, "M400\r\n")
 
-    command(ser, "G0Z197.5\r\n")
+    command(ser, "G0Z198.5\r\n")
     command(ser, "M400\r\n")
     command(ser, "G0E20\r\n")
     command(ser, "G0E0\r\n")
