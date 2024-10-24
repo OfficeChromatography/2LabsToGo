@@ -1,0 +1,3 @@
+UV 365nm 1206 4,3 Ohm
+UV 265nm 1206 20 Ohm
+Terminal 5,08mm 2Pin

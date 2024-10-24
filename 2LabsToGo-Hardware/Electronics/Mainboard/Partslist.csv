@@ -1,0 +1,280 @@
+Partlist
+
+Exported from 2LabsToGo V0.3.0.brd at 02.09.2024 08:42
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value                       Package         Library                      Position (mm)         Orientation
+
+C1       10u                         PANASONIC_B     rcl                          (92.71 107.95)        R180
+C2       100u                        PANASONIC_D     rcl                          (140.335 50.8)        R90
+C3       100u                        PANASONIC_D     rcl                          (99.3775 5.106)       R90
+C4       100n                        C0805           rcl                          (68.8975 63.1825)     R180
+C5       10u                         PANASONIC_B     rcl                          (92.71 112.395)       R180
+C6       100u                        PANASONIC_D     rcl                          (91.44 99.06)         R0
+C7       10u                         PANASONIC_B     rcl                          (35.56 111.76)        R180
+C8       10u                         PANASONIC_B     rcl                          (41.91 69.85)         R90
+C9       100n                        C0805           rcl                          (135.89 49.53)        R270
+C10      10u                         PANASONIC_B     rcl                          (88.9 123.19)         R0
+C11      100n                        C0805           rcl                          (77.47 8.89)          R90
+C12      100n                        C0805           rcl                          (74.93 8.89)          R90
+C13      100n                        C0805           rcl                          (82.55 8.89)          R90
+C14      100n                        C0805           rcl                          (80.01 8.89)          R90
+C15      100u                        PANASONIC_D     rcl                          (16.484 133.35)       R0
+C16      100n                        C0805           rcl                          (85.09 8.89)          R90
+C17      100n                        C0805           rcl                          (73.025 42.8625)      R0
+C18      100n                        C0805           rcl                          (85.09 63.8175)       R90
+C19      100n                        C0805           rcl                          (65.7225 62.5475)     R90
+C20      22p                         C0805           rcl                          (90.805 43.18)        R180
+C21      22p                         C0805           rcl                          (90.805 38.1)         R180
+C22      100p                        C0805           rcl                          (74.295 39.6875)      R90
+C23      100n                        C0805           rcl                          (140.6525 38.1)       R0
+C24      100n                        C0805           rcl                          (139.3825 45.72)      R0
+C25      100n                        C0805           rcl                          (10.795 111.76)       R0
+C26      100n                        C0805           rcl                          (16.1925 102.235)     R270
+C27      10u                         PANASONIC_B     rcl                          (5.08 111.76)         R180
+C28      680p                        C0805           rcl                          (109.5375 34.29)      R90
+C29      100n                        C0805           rcl                          (120.3325 38.1)       R0
+C30      22n                         C0805           rcl                          (119.0625 45.72)      R0
+C31      100n                        C0805           rcl                          (26.035 111.76)       R0
+C32      100n                        C0805           rcl                          (31.4325 102.235)     R270
+C33      680p                        C0805           rcl                          (129.8575 33.9725)    R90
+C34      10u                         PANASONIC_B     rcl                          (20.32 111.76)        R180
+C35      100n                        C0805           rcl                          (41.275 111.76)       R0
+C36      100n                        C0805           rcl                          (46.6725 102.235)     R270
+C37      100u                        PANASONIC_D     rcl                          (133.35 74.93)        R270
+C38      100u                        PANASONIC_D     rcl                          (133.35 113.9825)     R270
+C39      100u                        PANASONIC_D     rcl                          (133.35 105.41)       R90
+C40      470u                        E5-10,5         rcl                          (6.35 69.215)         R180
+C41      100n                        C0805           Resistor                     (129.8575 80.645)     R90
+C42      100n                        C0805           Resistor                     (126.6825 104.775)    R270
+C43      100n                        C0805           Resistor                     (128.5875 104.775)    R270
+C44      100n                        C0805           rcl                          (64.77 8.89)          R90
+C45      100n                        C0805           rcl                          (68.58 8.89)          R90
+C46      22n                         C0805           rcl                          (27.94 76.2)          R270
+C47      100n                        C0805           rcl                          (40.64 74.93)         R0
+C48      100p                        C0805           rcl                          (34.29 85.09)         R0
+C49      100n                        C0805           rcl                          (41.91 64.77)         R90
+C50      1n                          C1812           rcl                          (3.175 83.82)         R90
+C51      10u                         PANASONIC_B     rcl                          (41.91 90.17)         R270
+C52      330n                        C1812           rcl                          (8.89 76.835)         R180
+C53      100n                        C0805           rcl                          (38.1 90.17)          R90
+C54      100u                        PANASONIC_D     rcl                          (121.92 61.595)       R270
+C55      100n                        C0805           rcl                          (117.475 49.53)       R270
+C56      100n                        C0805           Resistor                     (91.44 93.98)         R180
+C57      470u                        E5-10,5         rcl                          (107.95 72.39)        R270
+C58      470u                        E5-10,5         rcl                          (97.155 72.39)        R270
+C59      47n                         C0805           Resistor                     (97.79 84.455)        R180
+C60      100n                        C0805           rcl                          (134.62 84.1375)      R270
+C61      100n                        C0805           rcl                          (132.08 84.1375)      R270
+C62      100n                        C0805           rcl                          (50.8 29.5275)        R0
+C63      100u                        PANASONIC_D     rcl                          (10.16 6.35)          R90
+C64      100u                        PANASONIC_D     rcl                          (10.16 27.305)        R90
+C65      100u                        PANASONIC_D     rcl                          (10.16 48.26)         R90
+C66      100u                        PANASONIC_D     rcl                          (33.02 20.32)         R270
+C67      100u                        PANASONIC_D     rcl                          (33.02 41.275)        R270
+C68      100n                        C0805           rcl                          (71.4375 17.78)       R90
+D1       SS54-HF                     DO214AC         diode                        (140.335 121.285)     R0
+D2       SS54-HF                     DO214AC         diode                        (107.95 82.55)        R90
+D4       RGF1G                       DO214AC         diode                        (66.04 123.825)       R180
+D6       RGF1G                       DO214AC         diode                        (94.2975 10.16)       R0
+D7       1N4148WS                    SOD-323         Diodes                       (112.0775 35.56)      R270
+D8       SML4757A                    SMB             diode                        (133.6675 7.62)       R0
+D9       SML4757A                    SMB             diode                        (112.0775 7.62)       R0
+D10      SS54-HF                     DO214AC         diode                        (126.1452625 10.0622375) R90
+D12      RGF1G                       DO214AC         diode                        (146.05 11.43)        R90
+D13      RGF1G                       DO214AC         diode                        (140.335 7.62)        R180
+D14      RGF1G                       DO214AC         diode                        (119.6975 7.62)       R180
+D15      RGF1G                       DO214AC         diode                        (104.4575 10.16)      R0
+D16      1N4148WS                    SOD-323         Diodes                       (132.3975 35.56)      R270
+DHT1                                 MA04-1          con-lstb                     (47.625 49.2125)      MR0
+E0-MOT                               MA04-1          con-lstb_round               (19.05 15.24)         MR270
+FAN1                                 JP1             jumper                       (131.445 68.58)       R270
+I2C_1                                MA04-1          con-lstb                     (84.1375 26.67)       R0
+I2C_2                                MA04-1          con-lstb                     (84.1375 29.845)      R0
+I2C_3                                MA04-1          con-lstb                     (84.1375 33.02)       R0
+IC1      555                         SO08            SparkFun-IC-Special-Function (119.0625 41.91)      R270
+IC2      74HC4053D                   SO16            74xx-eu                      (49.53 19.685)        R270
+IC3      LM358MX                     SO08            linear                       (10.16 106.68)        R180
+IC4      555                         SO08            SparkFun-IC-Special-Function (139.3825 41.91)      R270
+IC5      LM358MX                     SO08            linear                       (25.4 106.68)         R180
+IC6      LM358MX                     SO08            linear                       (40.64 106.68)        R180
+IC7      74HC4053D                   SO16            74xx-eu                      (66.04 24.13)         R180
+IC8      SE555DRG4                   SO08            SparkFun-IC-Special-Function (33.02 80.01)         R180
+IC9      AS7805ADTR                  DPAC_NEU        linear                       (33.02 67.31)         R90
+IC10     MIC4420M                    SO-08           transistor-power             (33.02 90.17)         R90
+IC11     LM1117MPX                   SOT223          v-reg                        (130.81 52.07)        R0
+IC12     LM1117MPX                   SOT223          v-reg                        (112.395 52.07)       R0
+ISP1     AVRISP-6                    AVRISP          adafruit                     (53.6575 63.1825)     R90
+J2       NID65-5                     NID655          NID65-5                      (124.46 72.39)        R90
+J3                                   618009211821    Wurth_Connectors_WR-DSUB     (91.44 135.89)        R180
+J4       KPJX-4S-S                   KYCON_KPJX-4S-S KPJX-4S-S                    (140.335 127)         R180
+J5       PJ-082BH                    PJ082BH         PJ-082BH                     (115.57 127)          R270
+J6       RASPBERRYPI-40-PIN-GPIO_PTH 2X20_SHROUDED   SparkFun-Connectors          (143.51 86.995)       R180
+JP1                                  2X03            pinhead                      (36.83 11.43)         R90
+JP2                                  2X03            pinhead                      (6.35 15.24)          R270
+JP3                                  JP4Q            jumper                       (53.6575 73.9775)     R0
+JP4                                  2X03            pinhead                      (6.35 36.195)         R270
+JP5                                  2X03            pinhead                      (6.35 57.15)          R270
+JP6                                  2X03            pinhead                      (36.83 32.385)        R90
+L1       100uh                       WE-CHSA_1212    Wurth_Automotive_WE-CHSA     (19.05 71.12)         R90
+L2       220uh                       WE-CHSA_1212    Wurth_Automotive_WE-CHSA     (102.87 97.155)       R270
+Q1       IRFR3410TRPBF               DPAK            transistor_test              (101.6 119.38)        R0
+Q2       IRFR3410TRPBF               DPAK            transistor_test              (66.04 115.57)        R0
+Q3       IRFR3410TRPBF               DPAK            transistor_test              (54.61 115.57)        R0
+Q4       16MHz                       QS              special                      (85.725 40.64)        R90
+Q5       IPD60R180P7SAUMA1           DPAK            transistor_test              (19.05 85.09)         R180
+Q6       IRFR3410TRPBF               DPAK            transistor_test              (133.6675 22.86)      R180
+Q7       IRFR3410TRPBF               DPAK            transistor_test              (104.4575 22.86)      R180
+Q8       IRFR3410TRPBF               DPAK            transistor_test              (113.3475 22.86)      R180
+Q9       IRFR3410TRPBF               DPAK            transistor_test              (94.2975 22.86)       R180
+R1       4k7                         R0805           rcl                          (90.805 116.84)       R90
+R2       100k                        R0805           rcl                          (71.12 108.2675)      R0
+R3       1m                          R0805           rcl                          (90.805 40.64)        R0
+R4       100k                        R0805           rcl                          (56.1975 108.2675)    R0
+R5       100k                        R0805           rcl                          (5.08 29.845)         R270
+R6       100k                        R0805           rcl                          (5.08 8.89)           R90
+R7       4k7                         R0805           rcl                          (93.98 124.46)        R0
+R8       100k                        R0805           rcl                          (5.08 50.8)           R270
+R9       100k                        R0805           rcl                          (103.1875 110.49)     R0
+R10      100k                        R0805           rcl                          (38.1 38.735)         R90
+R11      4k7                         R0805           rcl                          (93.345 116.84)       R90
+R12      120                         R0805           rcl                          (111.125 45.72)       R0
+R13      10                          R0805           rcl                          (99.06 110.49)        R180
+R14      10                          R0805           rcl                          (65.0875 108.2675)    R180
+R15      10                          R0805           rcl                          (52.3875 107.315)     R90
+R16      10k                         R0805           rcl                          (6.35 20.32)          R180
+R18      10k                         R0805           rcl                          (6.35 41.275)         R180
+R19      10k                         R0805           rcl                          (6.35 62.23)          R180
+R20      10k                         R0805           rcl                          (36.83 27.305)        R0
+R21      4k7                         R0805           rcl                          (87.9475 22.86)       R270
+R22      4k7                         R0805           rcl                          (85.4075 22.86)       R270
+R23      1k                          R0805           rcl                          (54.2925 92.3925)     R180
+R24      1k                          R0805           rcl                          (54.2925 94.9325)     R180
+R25      1k                          R0805           rcl                          (69.5325 97.4725)     R0
+R26      100k                        R0805           rcl                          (38.1 17.78)          R90
+R27      10k                         R0805           rcl                          (36.83 6.35)          R0
+R28      330                         R0805           rcl                          (129.8575 38.1)       R90
+R29      10k                         R0805           rcl                          (134.3025 42.545)     R90
+R30      330                         R0805           rcl                          (136.8425 36.83)      R270
+R31      10                          R0805           rcl                          (136.2075 31.75)      R270
+R32      10k                         R0805           rcl                          (144.145 30.48)       R0
+R33      4k7                         R0805           rcl                          (140.0175 30.48)      R180
+R34      500k                        RTRIM3296W      rcl                          (145.7325 36.83)      R0
+R35      1k                          R0805           rcl                          (15.24 111.76)        R180
+R36      10k                         R0805           rcl                          (4.1275 103.505)      R270
+R37      4k7                         R0805           rcl                          (5.08 107.95)         R0
+R38      1k                          R0805           rcl                          (16.1925 97.79)       R270
+R39      1M                          R0805           rcl                          (16.1925 107.6325)    R270
+R40      1k                          R0805           rcl                          (29.21 102.235)       R90
+R41      200k                        RTRIM3296W      rcl                          (8.89 97.79)          R270
+R42      TBD                         R0805           rcl                          (10.16 101.6)         R0
+R43      10k                         R0805           rcl                          (13.97 107.6325)      R270
+R44      330                         R0805           rcl                          (109.5375 38.4175)    R90
+R45      10k                         R0805           rcl                          (113.9825 42.545)     R270
+R46      330                         R0805           rcl                          (117.1575 36.83)      R270
+R47      10                          R0805           rcl                          (115.8875 31.75)      R270
+R48      10k                         R0805           rcl                          (123.825 30.48)       R0
+R49      4k7                         R0805           rcl                          (119.6975 30.48)      R180
+R50      500k                        RTRIM3296W      rcl                          (125.4125 36.83)      R0
+R51      TBD                         R0805           rcl                          (144.145 43.815)      R90
+R52      TBD                         R0805           rcl                          (124.1425 43.8785)    R90
+R53      10                          R0805           rcl                          (106.9975 31.75)      R270
+R54      100k                        R0805           rcl                          (103.1875 30.48)      R0
+R55      100k                        R0805           rcl                          (112.0775 31.4325)    R270
+R56      100k                        R0805           rcl                          (132.3975 31.4325)    R270
+R57      1k                          R0805           rcl                          (30.48 111.76)        R180
+R58      10k                         R0805           rcl                          (19.3675 103.505)     R270
+R59      4k7                         R0805           rcl                          (20.32 107.95)        R0
+R60      TBD                         R0805           rcl                          (25.4 101.6)          R0
+R61      1k                          R0805           rcl                          (31.4325 97.79)       R270
+R62      1M                          R0805           rcl                          (31.4325 107.6325)    R270
+R63      1k                          R0805           rcl                          (13.97 102.235)       R90
+R64      200k                        RTRIM3296W      rcl                          (24.13 97.79)         R270
+R65      10k                         R0805           rcl                          (29.21 107.6325)      R270
+R66      0R1                         R1206           rcl                          (33.02 118.11)        R90
+R67      0R1                         R1206           rcl                          (17.78 118.11)        R90
+R68      1k                          R0805           rcl                          (45.72 111.76)        R180
+R69      10k                         R0805           rcl                          (34.6075 103.505)     R270
+R70      4k7                         R0805           rcl                          (35.56 107.95)        R0
+R71      1k                          R0805           rcl                          (46.6725 97.79)       R270
+R72      1M                          R0805           rcl                          (46.6725 107.6325)    R270
+R73      1k                          R0805           rcl                          (44.45 102.235)       R90
+R74      200k                        RTRIM3296W      rcl                          (39.37 97.79)         R270
+R75      TBD                         R0805           rcl                          (40.64 101.6)         R0
+R76      10k                         R0805           rcl                          (44.45 107.6325)      R270
+R77      0R1                         R1206           rcl                          (48.26 118.11)        R90
+R78      10k                         R0805           rcl                          (50.165 45.4025)      R180
+R79      10k                         R0805           rcl                          (93.98 120.65)        R180
+R80      TBD                         R0805           rcl                          (125.73 49.53)        R90
+R81      500                         RTRIM3296W      rcl                          (121.92 52.07)        R0
+R82      100k                        R0805           rcl                          (72.0725 39.6875)     R90
+R83      100                         R0805           rcl                          (25.0825 134.62)      R0
+R84      15k                         R0805           rcl                          (31.75 74.93)         R180
+R85      51k                         R0805           rcl                          (36.83 78.74)         R90
+R86      TBD                         R0805           rcl                          (35.8775 74.93)       R180
+R87      10                          R0805           rcl                          (25.4 90.17)          R180
+R88      TBD                         RTRIM3296W      rcl                          (40.64 81.28)         R180
+R89      3k                          R0805           rcl                          (97.79 81.915)        R180
+R90      1k                          R0805           rcl                          (91.44 79.375)        R90
+R91      18k512                      R0805           rcl                          (93.98 79.375)        R270
+R92      330                         R0805           rcl                          (69.5325 94.9325)     R0
+R93      330                         R0805           rcl                          (69.5325 92.3925)     R0
+R94      330                         R0805           rcl                          (69.5325 89.8525)     R0
+R95      1k                          R0805           rcl                          (54.2925 82.2325)     R180
+R96      1k                          R0805           rcl                          (54.2925 79.6925)     R180
+R97      1k                          R0805           rcl                          (54.2925 84.7725)     R180
+R98      330                         R0805           rcl                          (54.2925 87.3125)     R180
+R99      10                          R0805           rcl                          (96.8375 31.75)       R270
+R100     100k                        R0805           rcl                          (93.0275 30.48)       R0
+R101     330                         R0805           rcl                          (69.5325 87.3125)     R0
+R102     4k7                         R0805           rcl                          (44.45 79.375)        R270
+R103     120                         R0805           rcl                          (142.24 56.515)       R180
+R104     TBD                         R0805           rcl                          (147.955 43.815)      R90
+R105     1k                          RTRIM3296W      rcl                          (146.685 51.435)      R0
+R106     10                          R0805           rcl                          (25.4 88.265)         R180
+SV1                                  ML14            con-harting-ml               (61.595 89.8525)      R90
+SV3                                  MA05-2          con-lstb                     (110.1725 116.205)    R270
+SV4                                  MA10-2          con-lstb                     (97.4725 50.8)        R90
+SV5                                  MA06-2          con-lstb                     (71.12 70.8025)       R0
+SW1      1825910-6                   1825910-6       Switch                       (66.675 40.3225)      R180
+T1       BC847                       SOT23           transistor                   (132.3975 39.37)      R0
+T2       BC847                       SOT23           transistor                   (140.6525 34.29)      R180
+T3       BC847                       SOT23           transistor                   (112.0775 39.37)      R0
+T4       BC847                       SOT23           transistor                   (120.3325 34.29)      R180
+T5       MJD128T4G                   DPAK            transistor                   (142.5575 22.86)      R0
+T6       MJD128T4G                   DPAK            transistor                   (122.2375 22.86)      R0
+T7       MJD200G                     DPAK            transistor-neu-to92          (25.4 118.11)         R90
+T8       MJD200G                     DPAK            transistor-neu-to92          (10.16 118.11)        R90
+T9       MJD200G                     DPAK            transistor-neu-to92          (40.64 118.11)        R90
+U$1      A4988BREAKOUT               A4988BREAKOUT   RepRapjr                     (29.21 7.62)          R90
+U$2      LM2577                      TO263-5         national-semiconductor       (87.63 86.36)         R90
+U$4      A4988BREAKOUT               A4988BREAKOUT   RepRapjr                     (13.97 19.05)         R270
+U$6      A4988BREAKOUT               A4988BREAKOUT   RepRapjr                     (13.97 40.005)        R270
+U$7      A4988BREAKOUT               A4988BREAKOUT   RepRapjr                     (13.97 60.96)         R270
+U$8      A4988BREAKOUT               A4988BREAKOUT   RepRapjr                     (29.21 28.575)        R90
+U2       ATMEGA2560-16AU             TQFP-100        Microcontroller              (77.47 54.61)         R0
+U4       TXB0108PWR                  TSSOP20         adafruit                     (133.35 90.17)        R90
+X+                                   MA03-1          con-lstb_round               (73.66 15.24)         MR270
+X-                                   MA03-1          con-lstb_round               (76.2 15.24)          MR270
+X-MOT                                MA04-1          con-lstb_round               (17.78 32.385)        MR270
+X1       MCV2                        MCV2            con-phoenix-381_l            (94.2975 13.97)       MR180
+X2       MCV2                        MCV2            con-phoenix-381_l            (138.7475 13.97)      MR180
+X4                                   MCV5            con-phoenix-381_l            (49.53 127)           MR0
+X5                                   MCV7            con-phoenix-381_l            (24.13 127)           MR0
+X6       MCV2                        MCV2            con-phoenix-381_l            (118.4275 13.97)      MR180
+X7       MCV2                        MCV2            con-phoenix-381_l            (104.4575 13.97)      MR180
+X8       MC6                         MC6             con-phoenix-381_l            (91.7575 133.985)     R180
+X9       PN87520-S                   PN87520-S       con-berg                     (67.945 130.81)       R180
+X10                                  MCV4            con-phoenix-381_l            (77.47 118.11)        MR0
+X11      MCV2                        MCV2            con-phoenix-381_l            (9.525 83.82)         R90
+Y+                                   MA03-1          con-lstb_round               (78.74 15.24)         MR270
+Y-                                   MA03-1          con-lstb_round               (81.28 15.24)         MR270
+Y-MOT                                MA04-1          con-lstb_round               (17.78 53.34)         MR270
+Z+                                   MA03-1          con-lstb_round               (83.82 15.24)         MR270
+Z-MOT1                               MA04-1          con-lstb_round               (25.4 36.195)         MR90
+Z-MOT2                               MA04-1          con-lstb_round               (25.4 15.24)          R90
+Z-STOP1                              MA03-1          con-lstb_round               (64.77 15.24)         MR270
+Z-STOP2                              MA03-1          con-lstb_round               (67.31 15.24)         R270
