@@ -342,7 +342,7 @@ function navigate( direction ) {
 		dataType: 'json',
 		
 		success: function( response ) {
-			
+		    console.log(response.imagepath)
 		    $('#uploaded-image').attr('src', response.imagepath);
 		    uploadedImage.onload = function(){
 				if (isNavigating < 2){
@@ -359,6 +359,162 @@ function navigate( direction ) {
 		}
 	    });
 }
+
+
+
+//~ function White_balance(){
+	//~ const{canvas, context} = CreateCanvas();
+	//~ const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+	//~ const data = imageData.data;
+	
+	//~ let totalR = 0, totalG = 0, totalB = 0;
+	//~ let pixelcount = 0;
+	
+	//~ for (let i = 0; i < data.length; i += 4) {
+		//~ totalR += data[i];
+		//~ totalG += data[i + 1];
+		//~ totalB += data[i + 2];
+		//~ pixelcount++;
+	//~ }
+	
+	//~ const avgR = totalR / pixelcount;
+	//~ const avgG = totalG / pixelcount;
+	//~ const avgB = totalB / pixelcount;
+	
+	//~ const avgGray = (avgR + avgG + avgB) / 3;
+	//~ const factorR = avgGray / avgR;
+	//~ const factorG = avgGray / avgG;
+	//~ const factorB = avgGray / avgB;
+	
+	//~ for (let i = 0; i < data.length; i +=4){
+		//~ data[i] = Math.min(255, data[i] * factorR);
+		//~ data[i + 1] = Math.min(255, data[i + 1] * factorG);
+		//~ data[i + 2] = Math.min(255, data[i + 2] * factorB);
+	//~ }
+	
+	//~ context.putImageData(imageData, 0, 0);
+	//~ uploadedImage.src = canvas.toDataURL();
+	
+//~ }
+
+
+
+//~ function White_balance(){
+    //~ const initialRedValue = 128; // Example: Mid-point for 8-bit color depth
+    //~ const initialGreenValue = 128;
+    //~ const initialBlueValue = 128;
+    
+    //~ const redValue = parseInt(document.getElementById("redSlider").value, 10);
+    //~ const greenValue = parseInt(document.getElementById("greenSlider").value, 10);
+    //~ const blueValue = parseInt(document.getElementById("blueSlider").value, 10);
+    //~ // Calculate differences for manual adjustment
+    //~ const redDiff = redValue - initialRedValue;
+    //~ const greenDiff = greenValue - initialGreenValue;
+    //~ const blueDiff = blueValue - initialBlueValue;
+
+    //~ // Process the image data to adjust RGB values
+    //~ for (let i = 0; i < data.length; i += 4) {
+        //~ data[i] = Math.min(Math.max(data[i] + redDiff, 0), 255); // Red
+        //~ data[i + 1] = Math.min(Math.max(data[i + 1] + greenDiff, 0), 255); // Green
+        //~ data[i + 2] = Math.min(Math.max(data[i + 2] + blueDiff, 0), 255); // Blue
+    //~ }
+//~ }
+
+
+
+
+//~ function White_balance(){
+	//~ console.log("Enterd white balance.")
+	//~ const{ canvas, context } = CreateCanvas();
+	//~ $('#uploaded-image').attr('src', canvas);
+	//~ canvas.toBlob(function (blob) {
+		//~ if (!blob){
+			//~ alert('Failed to convert canvas to Blob.');
+			//~ return;
+		//~ }
+		
+	//~ const formData = new FormData();
+	//~ formData.append('image', blob, 'canvas-image.png');
+
+	//~ $.ajax({
+		//~ url: '/imageProcess/whitebalance/',
+		//~ type: 'POST',
+		//~ data: formData,
+		//~ contentType: false,
+		//~ processData: false,
+		//~ success: function (data, status, xhr) {
+			//~ console.log("succesfully got image.")
+			//~ const blob = new Blob([data], { type: xhr.getResponseHeader('Content-Type')});
+			//~ const imageUrl = URL.createObjectURL(blob);
+			//~ console.log(imageUrl)
+			
+			//~ $('#uploaded-image').attr('src', imageUrl);
+			//~ Get_Initial_values(document.getElementById('uploaded-image'));
+			
+		//~ },
+		//~ error: function (xhr, status, error){
+			//~ alert(`Error: ${xhr.responseText || error}`);
+		//~ },
+		//~ xhr: function() {
+			//~ const xhr = new XMLHttpRequest();
+			//~ xhr.responseType = 'attaybuffer';
+			//~ return xhr;
+		//~ }
+	//~ });
+	//~ }, 'image/png');
+//~ }
+
+
+function White_balance() {
+    console.log("Entered white balance.");
+
+    const { canvas, context } = CreateCanvas();
+    canvas.toBlob(function (blob) {
+        if (!blob) {
+            alert('Failed to convert canvas to Blob.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('image', blob, 'canvas-image.png');
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/imageProcess/whitebalance/',
+            type: 'POST',
+            data: formData, // Use FormData for binary data
+            contentType: false, // Let the browser set the Content-Type
+            processData: false, // Don't process FormData
+            success: function (data, status, xhr) {
+                const contentType = xhr.getResponseHeader('Content-Type');
+                if (contentType && contentType.startsWith('image/')) {
+                    // Convert the binary response to a Blob and create an image URL
+                    const blob = new Blob([data], { type: contentType });
+                    const imageUrl = URL.createObjectURL(blob);
+
+                    // Display the processed image in the HTML <img> element
+                    $('#uploaded-image').attr('src', imageUrl);
+                } else {
+                    alert('Unexpected response from server.');
+                }
+            },
+            error: function (xhr, status, error) {
+                alert(`Error: ${xhr.responseText || error}`);
+            },
+            xhr: function () {
+                const xhr = new XMLHttpRequest();
+                xhr.responseType = 'arraybuffer'; // Ensure binary response
+                return xhr;
+            }
+        });
+    }, 'image/png');
+}
+
+
+
+
+
+
+
 
 function Get_name( src ){
 	if (other_source){

@@ -1,4 +1,4 @@
-let intervalo;
+let timeout;
 
 function sendToMachine(value){
   data={'gcode':value}
@@ -24,9 +24,9 @@ $('#intensitytext').on('change',function(){
 $('#turnoff').on('click',function(){
   gcode = 'M42P3S0'
   sendToMachine(gcode)
-  if (intervalo) {
-    clearInterval(intervalo);
-    intervalo = null;
+  if (timeout) {
+    clearTimeout(timeout);
+    timeout = null;
   }
 })
 
@@ -44,6 +44,10 @@ function showAlert() {
 function executeCommand() {
       gcode = 'M42P3S0'
       sendToMachine(gcode);
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
   
   console.log("The nebulizer is now switched off.");
 }
@@ -51,8 +55,8 @@ function executeCommand() {
 $('#manualcontrol').on('click',function(){
       gcode = 'M42P3S'+ $('#intensitytext').val()
       sendToMachine(gcode);
-      if (!intervalo) {
-        intervalo = setInterval(showAlert, 120000);
+      if (!timeout) {
+        timeout = setTimeout(showAlert, 120000);
       }
 })
 
@@ -61,12 +65,16 @@ $('#manualcontrol').on('click',function(){
 $('#s50').on('click', function () {
   gcode = 'M42P3S50'; 
   sendToMachine(gcode);
- 
+  if (!timeout) {
+    timeout = setTimeout(showAlert, 120000);
+  } 
 });
 
 $('#s200').on('click', function () {
   gcode = 'M42P3S200'; 
   sendToMachine(gcode);
-
+  if (!timeout) {
+    timeout = setTimeout(showAlert, 120000);
+  }
 });
 

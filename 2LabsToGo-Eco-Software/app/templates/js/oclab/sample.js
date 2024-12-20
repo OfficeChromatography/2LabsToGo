@@ -304,7 +304,7 @@ function loadDataIntoForm(data) {
     if (key === "table") {
       loadTableData(data[key]);
     } else {
-      var input = document.querySelector(`[name="${key}"]`);
+      var input = document.querySelector('[name="${key}"]');
       if (input) {
         input.value = data[key];
         input.dispatchEvent(new Event('change', { bubbles: true }));

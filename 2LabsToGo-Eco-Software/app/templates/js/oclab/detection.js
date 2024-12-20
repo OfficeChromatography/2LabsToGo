@@ -123,6 +123,8 @@ function loadMethodSelected(){
 
 $('#shootbttn').on('click', function (e) {
   e.preventDefault();
+  $('#loadingModal').show();
+  $('#modalOverlay').show();
   loadMethodSelected();
   let formData = $('form').serializeArray();
   formData.push({ name: 'colorSelected[]', value: colorSelected[0].value });
@@ -133,12 +135,20 @@ $('#shootbttn').on('click', function (e) {
   formData.push({ name: 'methodSelected[]', value: methodSelected[1].value });
   
   $.ajax({
-      method: 'POST',
-      url: captureEndpoint,
-      data: $.param(formData),
-      success: shootMethodSuccess,
-      error: shootMethodError,
-  });
+    method: 'POST',
+    url: captureEndpoint,
+    data: $.param(formData),
+    success: function(data) {
+      shootMethodSuccess(data);
+      $('#loadingModal').hide();  // Pop-up-Fenster bei Erfolg schließen
+      $('#modalOverlay').hide();
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      shootMethodError(jqXHR, textStatus, errorThrown);
+      $('#loadingModal').hide();  // Pop-up-Fenster bei Fehler schließen
+      $('#modalOverlay').hide();
+    }
+   });
 });
 
 function shootMethodSuccess(data, textStatus, jqXHR){
@@ -158,7 +168,10 @@ $('#hommingbttn').on('click', function (e) {
   sendToMachine(gcode);
   gcode = 'M42P36S0';
   sendToMachine(gcode);
+  sendToMachine('M355 S1 P255')
   gcode = 'G28X\nG28Y\nG28Z';
+  sendToMachine(gcode);
+  gcode = 'M355S1P50';  //case light on
   sendToMachine(gcode);
 });
 
@@ -173,8 +186,13 @@ $('#cameraposbttn').on('click', function (e) {
     sendToMachine(gcode)
     gcode = 'M42P36S0'
     sendToMachine(gcode)
+    sendToMachine('M355 S0 P255')
     gcode = 'G28Y\nG1X90Y161.6Z270' //Y value depends on each system
     sendToMachine(gcode)
+    gcode = 'M355S1P50';  //case light on
+    sendToMachine(gcode);
+    gcode = 'M355S0P50';  //case light off
+    sendToMachine(gcode);
   })
 
 var list_of_saved = new listOfSaved("http://127.0.0.1:8000/capture/save/",

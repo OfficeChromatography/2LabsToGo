@@ -1,4 +1,4 @@
-# 2LabsToGo
+# 2LabsToGo-Eco
 
 ## 2LabsToGo-Eco combines an analytical (high-performance thin layer chromatography) and a biological (bioassays) laboratory.
 

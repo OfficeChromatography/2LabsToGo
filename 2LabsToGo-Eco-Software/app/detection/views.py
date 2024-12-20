@@ -1,7 +1,7 @@
 from django.views.generic import FormView, View
 from django.shortcuts import render, redirect
 from django.views import View
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
 from connection.forms import OC_LAB
 from app.settings import STATIC_ROOT, MEDIA_ROOT
 from .models import *
@@ -23,6 +23,13 @@ from finecontrol.forms import data_validations, data_validations_and_save
 import csv
 import urllib.parse
 from django.core.files.uploadedfile import SimpleUploadedFile
+from io import BytesIO
+from django.conf import settings
+from django.http import JsonResponse, HttpResponse
+from django.views import View
+from PIL import Image
+import numpy as np
+from io import BytesIO
 
 
 
@@ -122,7 +129,86 @@ class Image_Process(View):
             full_photo_url = request.build_absolute_uri(photo_path)
     
         return JsonResponse({'imagepath':full_photo_url})
+        
 
+# ~ class WhiteBalance(View):
+    # ~ def post(self, request):
+        # ~ if 'image' not in request.FILES:
+            # ~ return JsonResponse({"error": "No image file provided"}, status=400)
+        
+        # ~ image_file = request.FILES['image']
+        
+        # ~ try:
+            # ~ # Open and process the image
+            # ~ img = Image.open(image_file).convert('RGB')
+            # ~ img = np.array(img)
+            
+            # ~ img_bgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+            # ~ wb = cv2.xphoto.createSimpleWB()
+            # ~ img_balanced = wb.balanceWhite(img_bgr)
+            
+            # ~ img_rgb = cv2.cvtColor(img_balanced, cv2.COLOR_BGR2RGB)
+            # ~ image_io = BytesIO()
+            # ~ Image.fromarray(img_rgb).save(image_io, format='PNG')
+            # ~ image_io.seek(0)
+            
+            # ~ # Save the file to disk
+            # ~ temp_path = "/home/labstogo/Desktop/temp_balanced_image.png"
+            # ~ try:
+                # ~ Image.fromarray(img_rgb).save(temp_path)
+                # ~ print(f"Image saved at {temp_path}")
+            # ~ except Exception as save_error:
+                # ~ return JsonResponse({"error": f"Failed to save file: {str(save_error)}"}, status=500)
+            
+            # ~ return HttpResponse(image_io, content_type='image/png')
+        
+        # ~ except Exception as e:
+            # ~ # Log and return the exact error
+            # ~ print(f"Error in WhiteBalance View: {str(e)}")
+            # ~ return JsonResponse({"error": f"Processing failed: {str(e)}"}, status=500)
+            
+
+
+
+class WhiteBalance(View):
+    def post(self, request):
+        # Check if 'image' is in the request
+        if 'image' not in request.FILES:
+            return JsonResponse({"error": "No image file provided"}, status=400)
+        
+        image_file = request.FILES['image']
+
+        try:
+            # Open the image using PIL and convert it to RGB
+            img = Image.open(image_file).convert('RGB')
+            img = np.array(img)
+            
+            # Convert RGB to BGR for OpenCV processing
+            img_bgr = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+            # Apply the OpenCV white balance filter
+            wb = cv2.xphoto.createSimpleWB()
+            img_balanced = wb.balanceWhite(img_bgr)
+            
+            # Convert back to RGB for PIL
+            img_rgb = cv2.cvtColor(img_balanced, cv2.COLOR_BGR2RGB)
+
+            # Convert the processed image to a binary stream
+            image_io = BytesIO()
+            Image.fromarray(img_rgb).save(image_io, format='PNG')
+            image_io.seek(0)  # Reset the stream position to the beginning
+
+            # Return the processed image as a binary HTTP response
+            return HttpResponse(image_io, content_type='image/png')
+
+        except Exception as e:
+            # Log and return the exact error
+            print(f"Error in WhiteBalance View: {str(e)}")
+            return JsonResponse({"error": f"Processing failed: {str(e)}"}, status=500)
+
+
+    
+    
 class DetectionView(FormView):
     def get(self, request):
         form = {}

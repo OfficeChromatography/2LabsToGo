@@ -280,7 +280,7 @@ class LedsControlsForm(forms.ModelForm):
                                             min_value=0,
                                             widget=forms.NumberInput(attrs={'size': '9', 'type':'range','placeholder':'0', 'class':'custom-range form-control mx-2 my-1'}),
                                             )
-        uv255_power = forms.DecimalField(label='255 nm',
+        uv255_power = forms.DecimalField(label='265 nm',
                                             required=False,
                                             max_digits=3,
                                             decimal_places=0,

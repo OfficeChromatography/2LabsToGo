@@ -1,7 +1,7 @@
 import time
 
-INIT_POINT_X = 24
-INIT_POINT_Y = 5.5
+INIT_POINT_X = 24-4
+INIT_POINT_Y = 5.5-2
 
 class GcodeGenerator:
     # set these values according to each machine!!!
@@ -203,19 +203,16 @@ class GcodeGenerator:
         self.check_return("M42P49S0")    #z-switch
         self.check_return("M42P36S0")    #3-way valve switch
         self.check_return("G0X1F5000")
+        self.check_return("G28Z")
         self.check_return(self.pos_rinbot)
         self.down_sample()
         self.finish_moves()
         for i in range(times):
             self.start_pump()
-            
             self.finish_moves()
-            self.stop_pump()
-            
+            self.stop_pump()   
             self.finish_moves()
             self.open_valve_frequency(frequency)
-            self.wait_ms(200)
-        
         self.up()
         self.finish_moves()
         self.check_return("M203Z40")
@@ -290,7 +287,7 @@ class GcodeGenerator:
         elif nozzlediameter == '0.13':
             j = 18
         elif nozzlediameter == 'atomizer 67k':
-            j = 1   
+            j = 35 
         i = 0
         while (i < 6):            
             j_cont = 0
@@ -329,7 +326,7 @@ class GcodeGenerator:
     
     def down_rinsing(self):
         '''Inject the needle on the vial'''
-        return self.check_return(f"G0E44")
+        return self.check_return(f"G0E47")
     
     def down_sample(self):
         '''Inject the needle on the vial'''
@@ -346,7 +343,7 @@ class GcodeGenerator:
         elif nozzlediameter == '0.13':
             j = 10
         elif nozzlediameter == 'atomizer 67k':
-            j = 1
+            j = 20
         i = 0
         while (i < 6):            
             j_cont = 0
@@ -359,7 +356,7 @@ class GcodeGenerator:
                 j_cont += 1             
             i += 1
         k = 0        
-        while (k < 0):
+        while (k < 8):
             self.start_pump()
             self.finish_moves()
             self.stop_pump()
@@ -369,7 +366,13 @@ class GcodeGenerator:
                 self.open_valve_frequency(frequency)
                 self.finish_moves()
                 self.wait_ms(200)
+                self.start_pump()
+                self.finish_moves()
+                self.stop_pump()
                 m += 1
+            self.start_pump()
+            self.finish_moves()
+            self.stop_pump()
             self.open_valve_frequency(2)
             self.finish_moves()
             k += 1        
@@ -403,7 +406,7 @@ class GcodeGenerator:
             if i == 0 or list_sample[i] != list_sample[i-1]:  
                 self.check_return("G0X1F5000")
                 self.check_return(self.hole_positions[list_sample[i] - 1])
-                self.check_return("G0E11")
+                self.check_return("G0E20")
                 self.finish_moves()
                 self.up()
                 self.finish_moves()
@@ -454,6 +457,9 @@ class GcodeGenerator:
                 if decrement == 0:
                     self.check_return("G0X1F5000")
                     self.finish_moves()
+                    self.start_pump()
+                    self.finish_moves()
+                    self.stop_pump()
                     self.open_valve_frequency(2)
                     decrement = rinsingPeriod
             if (flag == 0 or flag == 3 or flag == 4):

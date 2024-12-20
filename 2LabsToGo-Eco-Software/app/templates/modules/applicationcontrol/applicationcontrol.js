@@ -32,8 +32,13 @@ class ApplicationControl{
             application_control.$stop()
             sendToMachine('M42P49S0')
             sendToMachine('M42P36S0')
+            sendToMachine('G90')
             sendToMachine('G0E0')
-            sendToMachine('G0X1');
+            sendToMachine('G0X1')
+            sendToMachine('G28Y')
+            sendToMachine('G28Z')
+            sendToMachine('M155S0')
+            sendToMachine('M140S0');
         })
     }
 

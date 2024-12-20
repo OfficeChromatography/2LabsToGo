@@ -7,6 +7,11 @@
 <!--{% include 'head.html' %}-->
 <title>Process Image</title>
 <link href="{%static 'modules/Image_Process/style.css'%}" rel="stylesheet">
+<!--
+<script async src="https://docs.opencv.org/4.x/opencv-extra.js" type="text/javascript"></script>
+-->
+<script async src="https://docs.opencv.org/4.x/opencv.js" type="text/javascript"></script>
+
 </head>
 
 <body id="page-top">
@@ -46,6 +51,7 @@
                                 
                                 <div class="image-container"> 
                                     <img id="uploaded-image" src="{{imagepath}}" alt="Uploaded Image">
+                                    <canvas id="canvasOutput"></canvas>
                                 </div>   
                                 
                                 <button id="right" class="nav-button" >&gt;</button>
@@ -111,6 +117,7 @@
                     <input type="file" id="image-upload" accept="image/*">
                     
                     <button id="DataBase-button" class="buttons" onclick="DataBase()">Data Base</button>
+                    <button id="reset-button" class="buttons" onclick="Reset()">Reset</button>
                     <button id="save-button" class="buttons" onclick="SaveData()">Save</button>
                     
                   </div>
@@ -228,8 +235,8 @@
                   
                   <div class="button-container">
                         <button id="dark-default-button" class="buttons" onclick="Default('dark')">Dark Background</button>
-                        <button id="reset-button" class="buttons" onclick="Reset()">Reset</button>
                         <button id="light-default-button" class="buttons" onclick="Default('light')">Light Background</button>
+                        <button id="white-balance-button" class="buttons" onclick="White_balance()">White Balance</button>
                   </div>
                   
                 </div>
@@ -275,6 +282,11 @@
     </div>
   </div>
   
+  <script>
+    function onOpenCvReady() {
+        console.log("OpenCV.js is ready!");
+    }
+  </script>
   <script src="{% static 'js/sb-admin-2.js' %}"></script>
   {% include 'modules/detectionhome/detectionhome.html' %}
   <script src="{% static 'js/oclab/topbar.js' %}"></script>
@@ -282,5 +294,6 @@
   <link rel="stylesheet" href="{% static 'modules/colpick/colpick.css' %}" type="text/css"/>
   <script src="{% static 'modules/loadlist/loadlist.js' %}"></script>
   <script src="{% static 'modules/Image_Process/script.js' %}"></script>
+  <div id="opencv-status" style="color: green; font-size: 16px; display: none;">OpenCV is ready!</div>
 </body>
 </html>

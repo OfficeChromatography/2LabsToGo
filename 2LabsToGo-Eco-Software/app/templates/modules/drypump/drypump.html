@@ -19,3 +19,11 @@
 
 <script src="{% static 'modules/drypump/drypump.js' %}"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        sendToMachine('M92Z400'); 
+        sendToMachine('M203Z40');
+        sendToMachine('M42P49S0');
+        sendToMachine('M42P36S0'); 
+    });
+</script>

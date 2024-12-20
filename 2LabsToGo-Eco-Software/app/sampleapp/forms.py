@@ -70,25 +70,25 @@ class BandsComponents_Form(forms.ModelForm):
         type = self.cleaned_data.get('type')
         return type
     
-    def clean_density(self):
-        density = self.cleaned_data.get('density')
-        return density
+    #def clean_density(self):
+    #    density = self.cleaned_data.get('density')
+    #    return density
 
-    def clean_viscosity(self):
-        viscosity = self.cleaned_data.get('viscosity')
-        return viscosity
+    #def clean_viscosity(self):
+    #    viscosity = self.cleaned_data.get('viscosity')
+    #    return viscosity
 
-    def clean(self):
-        viscosity = self.cleaned_data.get('viscosity')
-        density = self.cleaned_data.get('density')
-        type = self.cleaned_data.get('type')
+    #def clean(self):
+    #    viscosity = self.cleaned_data.get('viscosity')
+    #    density = self.cleaned_data.get('density')
+    #    type = self.cleaned_data.get('type')
 
-        if type == 'Specific':
-            if density == "null" or viscosity == "null":
-                    raise forms.ValidationError(
-                        "Specify Density and Viscosity!"
-                    )
-        return self.cleaned_data
+    #    if type == 'Specific':
+    #        if density == "null" or viscosity == "null":
+    #                raise forms.ValidationError(
+    #                    "Specify Density and Viscosity!"
+    #                )
+    #    return self.cleaned_data
 
 class ZeroPosition_Form(forms.ModelForm):
 
