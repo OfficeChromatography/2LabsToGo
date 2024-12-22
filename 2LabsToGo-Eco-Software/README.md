@@ -1,18 +1,18 @@
-# 2LabsToGo-Software
+# 2LabsToGo-Eco-Software
 ## Install
 The installation process is really simple. 
 
-2LabsToGo-Software works fine on a 'Raspberry Pi 4' with 4Gb RAM memory and installed on it through [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
+2LabsToGo-Eco-Software works fine on a 'Raspberry Pi 4' with 4Gb RAM memory and installed on it through [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 
-As operation system, Raspberry Pi OS (Legacy, 64-bit, Debial Bullseye) is recommended. 
+As operation system, Raspberry Pi OS (Legacy, 64-bit, Debian Bullseye) is recommended. 
 
-To clone the 2LabsToGo repository, consult this [README](https://github.com/OfficeChromatography/2LabsToGo/blob/main/README.md).
+To clone the 2LabsToGo-Eco repository, consult this [README](https://github.com/OfficeChromatography/2LabsToGo-Eco/blob/main/README.md).
 
 ### Execute 'install.py'
-To install 2LabsToGo-Software, go to the folder that contains the 2LabsToGo-Software with
+To install 2LabsToGo-Eco-Software, go to the folder that contains the 2LabsToGo-Eco-Software with
 
 ```bash
-cd /path/to/your/2LabsToGo-Software
+cd /path/to/your/2LabsToGo-Eco-Software
 ```
 Then execute
 ```bash
@@ -22,11 +22,11 @@ python3 install.py
 This will install:
 ```
 docker
-docker-compose
+docker compose
 ```
-After some minutes, 2LabsToGo-Software is installed in your device.
+After some minutes, 2LabsToGo-Eco-Software is installed in your device.
 
-Then and execute the run.py file with
+To start the server execute the run.py file with
 ```
 python3 run.py 
 ```
@@ -35,9 +35,9 @@ To quit the Django server press
 ctrl+c 
 ```
 
-2LabsToGo-Software was intensively tested with both Chromium and Firefox as browser.
+2LabsToGo-Eco-Software was intensively tested with both Chromium and Firefox as browser.
 
-To use the software consult the [2LabsToGo-Software Manual](https://github.com/OfficeChromatography/2LabsToGo/blob/main/2LabsToGo-Instructions/2LabsToGo-Software%20Manual.pdf).
+To use the software consult the [2LabsToGo-Eco-Software Manual](https://github.com/OfficeChromatography/2LabsToGo-Eco/blob/main/2LabsToGo-Eco-Instructions/2LabsToGo-Eco-Software%20Manual.pdf).
 
 # Useful guides
 

@@ -7,7 +7,7 @@
 
 This repository contains the folders for the hardware, firmware, software, and the instructions for 2LabsToGo-Eco.
 
-### 1. Clone the 2LabsToGo repository
+### 1. Clone the 2LabsToGo-Eco repository
 The simplest way to clone a git repository is opening a Terminal, then go to the directory where you would like to have the 2LabsToGo-Eco folders containing the firmware, hardware, instructions, and the software.  
 
 E.g.

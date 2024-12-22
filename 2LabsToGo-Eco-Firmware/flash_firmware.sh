@@ -7,4 +7,4 @@ sudo avrdude -p atmega2560 -C avrdude_gpio.conf -c 2LabsToGo -v -U lfuse:w:0xff:
 #sudo avrdude -p atmega2560 -C avrdude_gpio.conf -c 2LabsToGo -v -U flash:w:ArduinoISP.ino.hex:i
 sudo avrdude -p atmega2560 -C avrdude_gpio.conf -c 2LabsToGo -v -U flash:w:ArduinoISP.ino.hex:i
 #sudo avrdude -p atmega2560 -C avrdude_gpio.conf -c 2LabsToGo -v -U flash:w:firmware_2LabsToGo.hex:i
-sudo avrdude -p atmega2560 -C avrdude_gpio.conf -c 2LabsToGo -v -U flash:w:firmware_2LabsToGo.hex:i
+sudo avrdude -p atmega2560 -C avrdude_gpio.conf -c 2LabsToGo -v -U flash:w:firmware_2LabsToGo-Eco.hex:i
