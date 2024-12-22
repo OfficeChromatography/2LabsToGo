@@ -13,8 +13,6 @@ To build the firmware [PlatformIO](http://docs.platformio.org/en/latest/ide.html
 
   - [Installing Marlin (VSCode)](http://marlinfw.org/docs/basics/install_platformio_vscode.html).
 
-If you need more help, follow our [instruction_visualstudio-code](https://github.com/OfficeChromatography/2LabsToGo/blob/main/2LabsToGo-Firmware/2LabsToGo-Marlin/instruction_visualstudio-code.pdf).
-
 For building the firmware open the folder 2LabsToGo-Eco-Marlin in Visual Studio Code.
 
 To flash the firmware from the Raspberry Pi onto the Arduino chip of the 2LabsToGo-Eco mainboard, 
